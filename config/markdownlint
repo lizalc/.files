@@ -1,0 +1,6 @@
+# mkdocs expects 4 spaces for list indentation
+MD007:
+  indent: 4
+
+MD013: false
+MD046: false
