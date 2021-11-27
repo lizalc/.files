@@ -1,0 +1,42 @@
+[user]
+	name = Liza Chevalier
+	email = lizalc@pm.me
+[help]
+	autocorrect = 1
+[diff]
+	colorMoved = default
+[merge]
+	tool = vscode
+[mergetool]
+	keepBackup = false
+[mergetool "vscode"]
+	cmd = code-insiders --wait $MERGED
+[commit]
+	verbose = true
+[fetch]
+	prune = true
+[core]
+	autocrlf = input
+	pager = less -F
+	excludesfile = ~/.global.gitignore
+	editor = nvim
+[init]
+	defaultBranch = main
+[submodule]
+	recurse = true
+[rebase]
+	autoStash = true
+	autoSquash = true
+[checkout]
+	defaultRemote = origin
+[pull]
+	ff = only
+[pager]
+	log = diff-highlight | less -F
+	show = diff-highlight | less -F
+	diff = diff-highlight | less -F
+[color "diff-highlight"]
+	oldHighlight = ul
+	oldReset = noul
+[includeIf "gitdir/i:**/work/**"]
+	path = ~/.work.gitconfig
