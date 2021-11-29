@@ -1,0 +1,62 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/command-not-found"
+tap "homebrew/core"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
+# Cross-platform make
+brew "cmake"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Convert text between DOS, UNIX, and Mac formats
+brew "dos2unix"
+# GNU awk utility
+brew "gawk"
+# Distributed revision control system
+brew "git"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Go implementation of configuration language for defining JSON data
+brew "go-jsonnet"
+# GNU grep, egrep and fgrep
+brew "grep"
+# Improved top (interactive process viewer)
+brew "htop"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Pager program similar to more
+brew "less"
+# Package manager for the Lua programming language
+brew "luarocks"
+# CLI for Node.js style checker and lint tool for Markdown files
+brew "markdownlint-cli"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim", args: ["HEAD"]
+# Tool for managing OCI containers and pods
+brew "podman"
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+brew "prettier"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Autoformat shell script source code
+brew "shfmt"
+# Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli"
+# Tool to detect and prevent secrets from getting checked in
+brew "talisman"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Monospaced font that includes programming ligatures
+cask "font-cascadia-code"
+# Command-line shell and scripting language
+cask "powershell"
