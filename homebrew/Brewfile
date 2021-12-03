@@ -60,3 +60,5 @@ brew "zsh"
 cask "font-cascadia-code"
 # Command-line shell and scripting language
 cask "powershell"
+# GUI for the Neovim text editor
+cask "vimr"
