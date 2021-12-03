@@ -1,3 +1,6 @@
+conventional-changelog-cli
+conventional-recommended-bump
 git-removed-branches
 markdownlint-cli2
 npm
+semantic-release

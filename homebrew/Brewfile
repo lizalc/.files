@@ -39,7 +39,7 @@ brew "luarocks"
 # CLI for Node.js style checker and lint tool for Markdown files
 brew "markdownlint-cli"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 # Tool for managing OCI containers and pods
 brew "podman"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
