@@ -8,7 +8,7 @@
 local settings = {
     'number', 'relativenumber', 'whichwrap+=<,>,h,l,[,]',
     'guicursor=a:hor20-blinkwait175-blinkoff150-blinkon175,i:ver25', 'mouse=a',
-    'termguicolors'
+    'termguicolors', 'tabstop=4', 'shiftwidth=4', 'softtabstop=-1', 'expandtab'
 }
 
 for _, setting in pairs(settings) do vim.cmd('set' .. ' ' .. setting) end
@@ -54,14 +54,17 @@ require'nvim-treesitter.configs'.setup {
     },
     rainbow = {
         enable = true,
-	extended_mode = true
-    }
+	    extended_mode = true
+    },
 }
 
 vim.g.indent_blankline_use_treesitter = true
+vim.g.indent_blankline_show_current_context = true
+vim.g.indent_blankline_show_current_context_start = true
 
 -- tokyonight.nvim settings
 -- Available styles: storm, night, day
 vim.g.tokyonight_style = "night"
+-- vim.g.tokyonight_transparent = true
 vim.cmd('colorscheme tokyonight')
 
