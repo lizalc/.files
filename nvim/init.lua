@@ -20,10 +20,6 @@ for _, setting in pairs(settings) do vim.cmd('set' .. ' ' .. setting) end
 if packer_bootstrap then
     vim.o.statusline = "Bootstrapped packer.nvim! Restart after 'PackerSync' has run. %F"
 else
-    vim.g.indent_blankline_use_treesitter = true
-    vim.g.indent_blankline_show_current_context = true
-    vim.g.indent_blankline_show_current_context_start = true
-
     -- tokyonight.nvim settings
     -- Available styles: storm, night, day
     vim.g.tokyonight_style = "night"
