@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/liza/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/liza/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/liza/.local/share/nvim/site/pack/packer/start/nvim-treesitter",

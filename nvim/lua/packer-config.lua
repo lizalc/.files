@@ -30,10 +30,12 @@ packer.startup({
         use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
         use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
 
+        use 'kyazdani42/nvim-tree.lua'
         use 'lukas-reineke/indent-blankline.nvim'
         use 'nvim-lualine/lualine.nvim'
         use 'nvim-telescope/telescope.nvim'
         use 'p00f/nvim-ts-rainbow'
+        use 'romgrk/barbar.nvim'
 
         use {
             'sudormrfbin/cheatsheet.nvim',
@@ -50,8 +52,6 @@ packer.startup({
                 'tami5/sqlite.lua'
             }
         }
-
-        use 'romgrk/barbar.nvim'
 
         if packer_bootstrap then packer.sync() end
     end,
