@@ -34,6 +34,7 @@ plugins=(
 	gem
 	git
 	gitignore
+	fzf
 	pip
 	zsh-autosuggestions
 	zsh-completions
@@ -80,4 +81,3 @@ alias rmall="rm -rvf **/bin **/obj"
 
 # Make python modern
 alias python="python3"
-
