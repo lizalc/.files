@@ -51,6 +51,8 @@ packer.startup({
             }
         }
 
+        use 'romgrk/barbar.nvim'
+
         if packer_bootstrap then packer.sync() end
     end,
     config = {
