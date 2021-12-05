@@ -26,6 +26,14 @@ packer.startup({function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use 'folke/tokyonight.nvim'
 
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      opt = true
+    }
+  }
+
   if packer_bootstrap then
     packer.sync()
   end
