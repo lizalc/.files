@@ -35,6 +35,22 @@ packer.startup({
         use 'nvim-telescope/telescope.nvim'
         use 'p00f/nvim-ts-rainbow'
 
+        use {
+            'sudormrfbin/cheatsheet.nvim',
+            requires = {
+                {'nvim-telescope/telescope.nvim'},
+                {'nvim-lua/popup.nvim'},
+                {'nvim-lua/plenary.nvim'}
+            }
+        }
+
+        use {
+            'nvim-telescope/telescope-frecency.nvim',
+            requires = {
+                'tami5/sqlite.lua'
+            }
+        }
+
         if packer_bootstrap then packer.sync() end
     end,
     config = {
