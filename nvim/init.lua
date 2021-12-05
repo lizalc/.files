@@ -17,7 +17,7 @@ local settings = {
 for _, setting in pairs(settings) do vim.cmd('set' .. ' ' .. setting) end
 
 if packer_bootstrap then
-    vim.o.statusline = "Bootstrapped packer.nvim! Restart after 'PackerSync' has run. %F"
+    vim.o.statusline = "Bootstrapped packer.nvim! 'PackerSync' then restart. %F"
 else
     -- tokyonight.nvim settings
     -- Available styles: storm, night, day

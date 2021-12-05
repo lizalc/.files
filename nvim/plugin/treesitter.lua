@@ -2,10 +2,7 @@
 if not packer_bootstrap then
     require'nvim-treesitter.configs'.setup {
         ensure_installed = "maintained",
-        highlight = {
-            enable = true,
-            additional_vim_regex_highlighting = false
-        },
+        highlight = {enable = true, additional_vim_regex_highlighting = false},
         incremental_selection = {
             enable = true,
             keymaps = {
@@ -15,14 +12,9 @@ if not packer_bootstrap then
                 node_decremental = "grm"
             }
         },
-        indent = {
-            enable = true
-        },
+        indent = {enable = true},
         -- nvim-ts-rainbow
-        rainbow = {
-            enable = true,
-            extended_mode = true
-        }
+        rainbow = {enable = true, extended_mode = true}
     }
 
     vim.opt.foldmethod = 'expr'
