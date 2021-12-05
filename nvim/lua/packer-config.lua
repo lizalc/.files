@@ -1,6 +1,7 @@
+-- https://github.com/wbthomason/packer.nvim
 local packer = nil
 
--- Bootstrap packer.nvim, if necessary - https://github.com/wbthomason/packer.nvim
+-- Bootstrap packer.nvim, if necessary
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 

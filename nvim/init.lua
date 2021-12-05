@@ -8,7 +8,6 @@ require('packer-config')
 -- * Allow directional keys to wrap to previous / next line
 -- * Match cursor to terminal settings otherwise Neovim overwrites them >:(
 -- * Enable mouse support
--- * Split below by default
 local settings = {
     'number', 'relativenumber', 'whichwrap+=<,>,h,l,[,]',
     'guicursor=a:hor20-blinkwait175-blinkoff150-blinkon175,i:ver25', 'mouse=a',

@@ -1,5 +1,5 @@
+-- https://github.com/nvim-treesitter/nvim-treesitter
 if not packer_bootstrap then
-    -- See nvim-treesitter module documentation: https://github.com/nvim-treesitter/nvim-treesitter#modules
     require'nvim-treesitter.configs'.setup {
         ensure_installed = "maintained",
         highlight = {
