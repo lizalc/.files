@@ -21,16 +21,19 @@ packer.startup({
     function(use)
         use 'wbthomason/packer.nvim'
 
-        use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-
-        use 'p00f/nvim-ts-rainbow'
-        use 'lukas-reineke/indent-blankline.nvim'
+        -- Theme
         use 'folke/tokyonight.nvim'
 
-        use {
-            'nvim-lualine/lualine.nvim',
-            requires = {'kyazdani42/nvim-web-devicons', opt = true}
-        }
+        -- Common modules and dependencies
+        use 'kyazdani42/nvim-web-devicons'
+        use 'nvim-lua/plenary.nvim'
+        use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+        use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+
+        use 'lukas-reineke/indent-blankline.nvim'
+        use 'nvim-lualine/lualine.nvim'
+        use 'nvim-telescope/telescope.nvim'
+        use 'p00f/nvim-ts-rainbow'
 
         if packer_bootstrap then packer.sync() end
     end,
