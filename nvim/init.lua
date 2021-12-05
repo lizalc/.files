@@ -11,7 +11,8 @@ require('packer-config')
 local settings = {
     'number', 'relativenumber', 'whichwrap+=<,>,h,l,[,]',
     'guicursor=a:hor20-blinkwait175-blinkoff150-blinkon175,i:ver25', 'mouse=a',
-    'termguicolors', 'tabstop=4', 'shiftwidth=4', 'softtabstop=-1', 'expandtab'
+    'termguicolors', 'tabstop=4', 'shiftwidth=4', 'softtabstop=-1', 'expandtab',
+    'clipboard=unnamed'
 }
 
 for _, setting in pairs(settings) do vim.cmd('set' .. ' ' .. setting) end
