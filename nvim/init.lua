@@ -19,6 +19,10 @@ for _, setting in pairs(settings) do vim.cmd('set' .. ' ' .. setting) end
 if packer_bootstrap then
     vim.o.statusline = "Bootstrapped packer.nvim! 'PackerSync' then restart. %F"
 else
+    vim.g.tokyonight_colors = {
+        -- default is too purplish
+        fg = "#e6e5e1"
+    }
     -- tokyonight.nvim settings
     -- Available styles: storm, night, day
     vim.g.tokyonight_style = "night"
