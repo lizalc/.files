@@ -28,4 +28,6 @@ else
     vim.g.tokyonight_style = "night"
     -- vim.g.tokyonight_transparent = true
     vim.cmd('colorscheme tokyonight')
+
+    vim.g.dashboard_default_executive = 'telescope'
 end

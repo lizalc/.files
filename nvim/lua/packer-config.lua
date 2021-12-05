@@ -30,6 +30,7 @@ packer.startup({
         use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
         use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
 
+        use 'glepnir/dashboard-nvim'
         use 'kyazdani42/nvim-tree.lua'
         use 'lukas-reineke/indent-blankline.nvim'
         use 'nvim-lualine/lualine.nvim'
