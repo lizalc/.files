@@ -13,7 +13,7 @@ packer = require('packer')
 packer.init()
 packer.reset()
 
-packer.startup(function(use)
+packer.startup({function(use)
   use 'wbthomason/packer.nvim'
 
   use {
@@ -28,7 +28,14 @@ packer.startup(function(use)
   if packer_bootstrap then
     packer.sync()
   end
-end)
+end,
+config = {
+    display = {
+        open_fn = function()
+            return require('packer.util').float({border = 'single'})
+        end
+    }
+}})
 
 vim.cmd([[
   augroup packer_user_config
