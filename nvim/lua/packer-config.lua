@@ -30,7 +30,9 @@ packer.startup({
         use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
         use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
 
+        use 'folke/trouble.nvim'
         use 'glepnir/dashboard-nvim'
+        use 'gpanders/editorconfig.nvim'
         use 'hrsh7th/cmp-nvim-lsp'
         use 'hrsh7th/cmp-buffer'
         use 'hrsh7th/cmp-path'
