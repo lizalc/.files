@@ -1301,6 +1301,8 @@
 			</dict>
 			<key>Blend</key>
 			<real>0.45346245091623033</real>
+			<key>Blink Allowed</key>
+			<false/>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
@@ -1867,7 +1869,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>CaskaydiaCovePLNerdFontComplete-Regular 14</string>
+			<string>DelugiaRegular 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
