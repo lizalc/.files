@@ -31,12 +31,23 @@ packer.startup({
         use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
 
         use 'glepnir/dashboard-nvim'
+        use 'hrsh7th/cmp-nvim-lsp'
+        use 'hrsh7th/cmp-buffer'
+        use 'hrsh7th/cmp-path'
+        use 'hrsh7th/cmp-cmdline'
+        use 'hrsh7th/nvim-cmp'
+        use 'hrsh7th/cmp-vsnip'
+        use 'hrsh7th/vim-vsnip'
+        use 'hrsh7th/vim-vsnip-integ'
         use 'kyazdani42/nvim-tree.lua'
         use 'lukas-reineke/indent-blankline.nvim'
+        use 'neovim/nvim-lspconfig'
         use 'nvim-lualine/lualine.nvim'
         use 'nvim-telescope/telescope.nvim'
         use 'p00f/nvim-ts-rainbow'
+        use 'rafamadriz/friendly-snippets'
         use 'romgrk/barbar.nvim'
+        use 'williamboman/nvim-lsp-installer'
 
         use {
             'sudormrfbin/cheatsheet.nvim',
