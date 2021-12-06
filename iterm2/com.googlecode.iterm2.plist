@@ -2009,6 +2009,8 @@
 	<false/>
 	<key>WindowNumber</key>
 	<false/>
+	<key>XtermVersion</key>
+	<integer>2500</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
