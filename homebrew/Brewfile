@@ -4,6 +4,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/command-not-found"
 tap "homebrew/core"
+tap "lizalc/misc"
+tap "teamookla/speedtest"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
@@ -14,6 +16,10 @@ brew "cmake"
 brew "coreutils"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GNU awk utility
 brew "gawk"
 # Distributed revision control system
@@ -39,25 +45,31 @@ brew "luarocks"
 # CLI for Node.js style checker and lint tool for Markdown files
 brew "markdownlint-cli"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 # Tool for managing OCI containers and pods
 brew "podman"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
-# Command-line interface for https://speedtest.net bandwidth tests
-brew "speedtest-cli"
 # Tool to detect and prevent secrets from getting checked in
 brew "talisman"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Ookla Speedtest
+brew "teamookla/speedtest/speedtest"
 # Monospaced font that includes programming ligatures
 cask "font-cascadia-code"
+# All Nerd Fonts glyphs, monospaced font, generated from Cascadia Code
+cask "font-delugia-complete"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
 # Command-line shell and scripting language
 cask "powershell"
 # GUI for the Neovim text editor
