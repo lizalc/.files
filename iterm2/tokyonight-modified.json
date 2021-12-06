@@ -442,7 +442,7 @@
     "Green Component" : 0.086274512112140656
   },
   "Blur" : false,
-  "Normal Font" : "CaskaydiaCovePLNerdFontComplete-Regular 14",
+  "Normal Font" : "DelugiaRegular 14",
   "Vertical Spacing" : 1,
   "Ansi 7 Color" : {
     "Red Component" : 0.66274511814117432,
@@ -457,6 +457,7 @@
   "Horizontal Spacing" : 1,
   "Option Key Sends" : 0,
   "Only The Default BG Color Uses Transparency" : true,
+  "Blink Allowed" : false,
   "Minimum Contrast" : 0,
   "Ansi 15 Color" : {
     "Red Component" : 0.75294119119644165,
