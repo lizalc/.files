@@ -1038,6 +1038,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>B9BA3C1C-31AA-4376-92A8-2B9C0C37389B</string>
+	<key>DisableCustomBoxDrawing</key>
+	<false/>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>EnableProxyIcon</key>
@@ -1993,6 +1995,8 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
+	<key>PreferSpeedToFullLigatureSupport</key>
+	<false/>
 	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
