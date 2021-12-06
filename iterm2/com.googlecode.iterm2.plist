@@ -1999,6 +1999,8 @@
 	<true/>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
+	<key>SolidUnderlines</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>UseBorder</key>
