@@ -209,6 +209,11 @@ _G.packer_plugins = {
     path = "/Users/liza/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
+  ["vim-jsonnet"] = {
+    loaded = true,
+    path = "/Users/liza/.local/share/nvim/site/pack/packer/start/vim-jsonnet",
+    url = "https://github.com/google/vim-jsonnet"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/Users/liza/.local/share/nvim/site/pack/packer/start/vim-vsnip",
