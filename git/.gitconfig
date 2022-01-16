@@ -32,9 +32,9 @@
 [pull]
 	ff = only
 [pager]
-	log = diff-highlight | less -F
-	show = diff-highlight | less -F
-	diff = diff-highlight | less -F
+	log = diff-highlight | less -x1,5 -F
+	show = diff-highlight | less -x1,5 -F
+	diff = diff-highlight | less -x1,5 -F
 [color "diff-highlight"]
 	oldHighlight = ul
 	oldReset = noul
