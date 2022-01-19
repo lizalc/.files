@@ -6,26 +6,35 @@ tap "homebrew/command-not-found"
 tap "homebrew/core"
 tap "lizalc/misc"
 tap "teamookla/speedtest"
+tap "tidwall/jj"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Language Server for Bash
+brew "bash-language-server"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
 # Cross-platform make
 brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Static analysis of C and C++ code
+brew "cppcheck"
+# Converts Microsoft Office docx documents to equivalent text documents
+brew "docx2txt"
 # Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Command-line outline and bitmap font editor/converter
+brew "fontforge"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GNU awk utility
 brew "gawk"
 # Distributed revision control system
 brew "git"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
@@ -38,8 +47,12 @@ brew "grep"
 brew "htop"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Fast and powerful Git hooks manager for any type of projects
+brew "lefthook"
 # Pager program similar to more
 brew "less"
+# Language Server for the Lua language
+brew "lua-language-server"
 # Package manager for the Lua programming language
 brew "luarocks"
 # CLI for Node.js style checker and lint tool for Markdown files
@@ -50,27 +63,37 @@ brew "neovim", args: ["HEAD"]
 brew "podman"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
+# Opinionated Lua code formatter
+brew "stylua"
 # Tool to detect and prevent secrets from getting checked in
 brew "talisman"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
 # UNIX shell (command interpreter)
 brew "zsh"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
+# jj
+brew "tidwall/jj/jj"
 # Monospaced font that includes programming ligatures
 cask "font-cascadia-code"
 # All Nerd Fonts glyphs, monospaced font, generated from Cascadia Code
 cask "font-delugia-complete"
 # Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
+cask "iterm2-beta"
 # Command-line shell and scripting language
 cask "powershell"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
 # GUI for the Neovim text editor
 cask "vimr"
