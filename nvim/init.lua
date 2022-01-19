@@ -397,6 +397,21 @@ lsp_config.bashls.setup({
 	capabilities = capabilities,
 })
 
+lsp_config.dockerls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lsp_config.jsonnet_ls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lsp_config.solargraph.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 lsp_config.sumneko_lua.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -425,6 +440,16 @@ lsp_config.sumneko_lua.setup({
 	flags = {
 		debounce_text_changes = 150,
 	},
+})
+
+lsp_config.tailwindcss.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lsp_config.yamlls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 lsp_config["null-ls"].setup({
