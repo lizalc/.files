@@ -433,7 +433,7 @@ lsp_config["null-ls"].setup({
 })
 
 require("trouble").setup()
--- require("luasnip.loaders.from_vscode").load()
+require("luasnip.loaders.from_vscode").load()
 require("treesitter-context").setup()
 require("spellsitter").setup()
 require("twilight").setup()
