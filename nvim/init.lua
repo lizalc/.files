@@ -80,6 +80,8 @@ packer.startup({
 			},
 		})
 
+		use({ "kosayoda/nvim-lightbulb" })
+
 		use({
 			"folke/trouble.nvim",
 			requires = "kyazdani42/nvim-web-devicons",
@@ -108,6 +110,16 @@ packer.startup({
 		use({
 			"lukas-reineke/indent-blankline.nvim",
 			requires = "nvim-treesitter/nvim-treesitter",
+		})
+
+		use({
+			"windwp/nvim-ts-autotag",
+			requires = "nvim-treesitter/nvim-treesitter",
+		})
+
+		use({
+			"windwp/nvim-autopairs",
+			requires = "hrsh7th/nvim-cmp",
 		})
 
 		use({
@@ -199,6 +211,13 @@ packer.startup({
 		use("google/vim-jsonnet")
 		use("editorconfig/editorconfig-vim")
 
+		use({
+			"neoclide/coc.nvim",
+			branch = "release",
+		})
+
+		use("ellisonleao/glow.nvim")
+
 		if packer_bootstrap then
 			packer.sync()
 		end
@@ -211,6 +230,8 @@ packer.startup({
 		},
 	},
 })
+
+vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
 
 vim.g.tokyonight_colors = {
 	-- default is too purplish
@@ -276,6 +297,19 @@ require("nvim-treesitter.configs").setup({
 		extended_mode = true,
 	},
 	indent = { enable = true },
+	autotag = {
+		enable = true,
+		filetypes = {
+			"html",
+			"javascript",
+			"javascriptreact",
+			"typescriptreact",
+			"svelte",
+			"vue",
+			"xml",
+			"csproj",
+		},
+	},
 })
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = [[nvim_treesitter#foldexpr()]]
@@ -356,6 +390,10 @@ cmp.setup.cmdline(":", {
 	}),
 })
 
+require("nvim-autopairs").setup({})
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+
 local nls = require("null-ls")
 nls.setup({
 	sources = {
@@ -406,6 +444,36 @@ lsp_config.jsonnet_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+--lsp_config.powershell_es.setup({
+--	on_attach = on_attach,
+--	capabilities = capabilities,
+--	bundle_path = "/Users/liza/.local/powershell",
+--	cmd = {
+--		"pwsh",
+--		"-NoLogo",
+--		"-NoProfile",
+--		"-NonInteractive",
+--		"-File",
+--		"/Users/liza/.local/powershell/PowerShellEditorServices/Start-EditorServices.ps1",
+--		"-HostName",
+--		"nvim",
+--		"-HostProfileId",
+--		"nvim",
+--		"-HostVersion",
+--		"2.0.0",
+--		"-LogPath",
+--		"/Users/liza/.cache/nvim/powershell_es.log",
+--		"-LogLevel",
+--		"Normal",
+--		"-BundledModulesPath",
+--		"/Users/liza/.local/powershell",
+--		"-EnableConsoleRepl",
+--		"-SessionDetailsPath",
+--		"/Users/liza/.cache/nvim/powershell_es.session.json",
+--        "-Stdio",
+--	},
+--})
 
 lsp_config.solargraph.setup({
 	on_attach = on_attach,
