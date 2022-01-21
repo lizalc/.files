@@ -211,11 +211,6 @@ packer.startup({
 		use("google/vim-jsonnet")
 		use("editorconfig/editorconfig-vim")
 
-		use({
-			"neoclide/coc.nvim",
-			branch = "release",
-		})
-
 		use("ellisonleao/glow.nvim")
 
 		if packer_bootstrap then
@@ -445,35 +440,35 @@ lsp_config.jsonnet_ls.setup({
 	capabilities = capabilities,
 })
 
---lsp_config.powershell_es.setup({
---	on_attach = on_attach,
---	capabilities = capabilities,
---	bundle_path = "/Users/liza/.local/powershell",
---	cmd = {
---		"pwsh",
---		"-NoLogo",
---		"-NoProfile",
---		"-NonInteractive",
---		"-File",
---		"/Users/liza/.local/powershell/PowerShellEditorServices/Start-EditorServices.ps1",
---		"-HostName",
---		"nvim",
---		"-HostProfileId",
---		"nvim",
---		"-HostVersion",
---		"2.0.0",
---		"-LogPath",
---		"/Users/liza/.cache/nvim/powershell_es.log",
---		"-LogLevel",
---		"Normal",
---		"-BundledModulesPath",
---		"/Users/liza/.local/powershell",
---		"-EnableConsoleRepl",
---		"-SessionDetailsPath",
---		"/Users/liza/.cache/nvim/powershell_es.session.json",
---        "-Stdio",
---	},
---})
+lsp_config.powershell_es.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	bundle_path = "/Users/liza/.local/powershell",
+	cmd = {
+		"pwsh",
+		"-NoLogo",
+		"-NoProfile",
+		"-NonInteractive",
+		"-File",
+		"/Users/liza/.local/powershell/PowerShellEditorServices/Start-EditorServices.ps1",
+		"-HostName",
+		"nvim",
+		"-HostProfileId",
+		"nvim",
+		"-HostVersion",
+		"2.0.0",
+		"-LogPath",
+		"/Users/liza/.cache/nvim/powershell_es.log",
+		"-LogLevel",
+		"Normal",
+		"-BundledModulesPath",
+		"/Users/liza/.local/powershell",
+		"-EnableConsoleRepl",
+		"-SessionDetailsPath",
+		"/Users/liza/.cache/nvim/powershell_es.session.json",
+		"-Stdio",
+	},
+})
 
 lsp_config.solargraph.setup({
 	on_attach = on_attach,
