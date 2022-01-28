@@ -35,6 +35,10 @@ brew "fzf"
 brew "gawk"
 # Distributed revision control system
 brew "git"
+# Official GitLab CI runner
+brew "gitlab-runner"
+# Render markdown on the CLI
+brew "glow"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
@@ -47,6 +51,8 @@ brew "grep"
 brew "htop"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Fast and powerful Git hooks manager for any type of projects
 brew "lefthook"
 # Pager program similar to more
@@ -67,6 +73,8 @@ brew "prettier"
 brew "python@3.10"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
 # Autoformat shell script source code
@@ -79,8 +87,12 @@ brew "talisman"
 brew "tree"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
+# Language Server for Yaml Files
+brew "yaml-language-server"
 # UNIX shell (command interpreter)
 brew "zsh"
+# A Language Server Protocol (LSP) server for Jsonnet
+brew "lizalc/misc/jsonnet-language-server", args: ["HEAD"]
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
 # jj
