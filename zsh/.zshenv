@@ -6,4 +6,4 @@ export EDITOR="nvim"
 
 # Add `diff-highlight` and local bins to the $PATH
 diffPath="/opt/homebrew/opt/git/share/git-core/contrib/diff-highlight"
-export PATH=$PATH:$diffPath:$HOME/.local/bin
+export PATH="${PATH}:${diffPath}:${HOME}/.gem/ruby/2.6.0/bin:${HOME}/.local/bin"
