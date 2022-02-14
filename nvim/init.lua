@@ -45,6 +45,8 @@ packer.startup({
 	function(use)
 		use("wbthomason/packer.nvim")
 		use("folke/tokyonight.nvim")
+		use("projekt0n/github-nvim-theme")
+		use("rebelot/kanagawa.nvim")
 
 		use({
 			"nvim-treesitter/nvim-treesitter",
@@ -213,6 +215,9 @@ packer.startup({
 
 		use("ellisonleao/glow.nvim")
 
+		use("folke/which-key.nvim")
+		use({ "mrjones2014/legendary.nvim" })
+
 		if packer_bootstrap then
 			packer.sync()
 		end
@@ -239,8 +244,10 @@ vim.g.tokyonight_italic_functions = true
 vim.g.tokyonight_italic_variables = false
 vim.g.tokyonight_transparent = true
 vim.g.tokyonight_lualine_bold = true
-vim.cmd([[colorscheme tokyonight]])
+--vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme kanagawa]])
 
+vim.opt.showmode = false
 vim.opt.spell = true
 
 vim.opt.number = true
@@ -565,7 +572,8 @@ gps.setup()
 
 require("lualine").setup({
 	sections = {
-		lualine_c = { { gps.get_location, cond = gps.is_available } },
+		lualine_b = { "branch", "diff", "diagnostics", "filename", { gps.get_location, cond = gps.is_available } },
+		lualine_c = {},
 	},
 })
 
@@ -595,3 +603,8 @@ require("gitsigns").setup({
 		relative_time = true,
 	},
 })
+
+vim.opt.timeoutlen = 50
+require("which-key").setup()
+
+require("legendary").setup()
