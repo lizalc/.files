@@ -14,9 +14,6 @@ vim.cmd([[
         autocmd!
         autocmd BufWritePost init.lua source <afile> | PackerCompile
     augroup end
-
-    " https://github.com/lukas-reineke/indent-blankline.nvim/issues/317#issuecomment-965926925
-    autocmd User PackerComplete,PackerCompileDone lua require("indent_blankline.utils").reset_highlights()
 ]])
 
 local packer_bootstrap = nil
@@ -54,6 +51,11 @@ packer.startup({
 		})
 
 		use({
+			"nvim-treesitter/nvim-treesitter-refactor",
+			requires = "nvim-treesitter/nvim-treesitter",
+		})
+
+		use({
 			"hrsh7th/nvim-cmp",
 			requires = {
 				"hrsh7th/cmp-nvim-lsp",
@@ -69,20 +71,18 @@ packer.startup({
 
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
-			requires = {
-				{ "nvim-lua/plenary.nvim" },
-			},
+			requires = "nvim-lua/plenary.nvim",
 		})
 
 		use({
 			"neovim/nvim-lspconfig",
 			requires = {
-				{ "hrsh7th/nvim-cmp" },
-				{ "ray-x/lsp_signature.nvim" },
+				"hrsh7th/nvim-cmp",
+				"ray-x/lsp_signature.nvim",
 			},
 		})
 
-		use({ "kosayoda/nvim-lightbulb" })
+		use("kosayoda/nvim-lightbulb")
 
 		use({
 			"folke/trouble.nvim",
@@ -126,9 +126,7 @@ packer.startup({
 
 		use({
 			"kyazdani42/nvim-tree.lua",
-			requires = {
-				"kyazdani42/nvim-web-devicons",
-			},
+			requires = "kyazdani42/nvim-web-devicons",
 		})
 
 		use({
@@ -143,23 +141,20 @@ packer.startup({
 					"kyazdani42/nvim-web-devicons",
 					opt = true,
 				},
-				-- This appears broken all of the sudden?
-				{ "SmiteshP/nvim-gps" },
+				"SmiteshP/nvim-gps",
 			},
 		})
 
 		use({
 			"nvim-telescope/telescope.nvim",
 			requires = {
-				{ "nvim-treesitter/nvim-treesitter" },
-				{ "neovim/nvim-lspconfig" },
-				{ "nvim-lua/plenary.nvim" },
+				"nvim-treesitter/nvim-treesitter",
+				"neovim/nvim-lspconfig",
+				"nvim-lua/plenary.nvim",
 				{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 				{
 					"nvim-telescope/telescope-frecency.nvim",
-					requires = {
-						"tami5/sqlite.lua",
-					},
+					requires = "tami5/sqlite.lua",
 				},
 				{
 					"kyazdani42/nvim-web-devicons",
@@ -171,21 +166,17 @@ packer.startup({
 		use({
 			"sudormrfbin/cheatsheet.nvim",
 			requires = {
-				{ "nvim-telescope/telescope.nvim" },
-				{ "nvim-lua/popup.nvim" },
-				{ "nvim-lua/plenary.nvim" },
+				"nvim-telescope/telescope.nvim",
+				"nvim-lua/popup.nvim",
+				"nvim-lua/plenary.nvim",
 			},
 		})
 
-		use({
-			"lewis6991/spellsitter.nvim",
-		})
+		use("lewis6991/spellsitter.nvim")
 
 		use({
 			"lewis6991/gitsigns.nvim",
-			requires = {
-				"nvim-lua/plenary.nvim",
-			},
+			requires = "nvim-lua/plenary.nvim",
 		})
 
 		use({
@@ -210,13 +201,35 @@ packer.startup({
 			requires = "nvim-telescope/telescope.nvim",
 		})
 
+		use({
+			"weilbith/nvim-code-action-menu",
+			cmd = "CodeActionMenu",
+		})
+
 		use("google/vim-jsonnet")
 		use("editorconfig/editorconfig-vim")
 
 		use("ellisonleao/glow.nvim")
 
 		use("folke/which-key.nvim")
-		use({ "mrjones2014/legendary.nvim" })
+		use("mrjones2014/legendary.nvim")
+
+		use({
+			"folke/todo-comments.nvim",
+			requires = "nvim-lua/plenary.nvim",
+			config = function()
+				require("todo-comments").setup()
+			end,
+		})
+
+		use("folke/lua-dev.nvim")
+
+		use({
+			"terrortylor/nvim-comment",
+			config = function()
+				require("nvim_comment").setup()
+			end,
+		})
 
 		if packer_bootstrap then
 			packer.sync()
@@ -232,20 +245,6 @@ packer.startup({
 })
 
 vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
-
-vim.g.tokyonight_colors = {
-	-- default is too purplish
-	fg = "#e6e5e1",
-}
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_keywords = true
-vim.g.tokyonight_italic_comments = true
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_italic_variables = false
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_lualine_bold = true
---vim.cmd([[colorscheme tokyonight]])
-vim.cmd([[colorscheme kanagawa]])
 
 vim.opt.showmode = false
 vim.opt.spell = true
@@ -297,6 +296,11 @@ require("nvim-treesitter.configs").setup({
 	rainbow = {
 		enable = true,
 		extended_mode = true,
+	},
+	refactor = {
+		highlight_definitions = {
+			enable = true,
+		},
 	},
 	indent = { enable = true },
 	autotag = {
@@ -396,19 +400,6 @@ require("nvim-autopairs").setup({})
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
 
-local nls = require("null-ls")
-nls.setup({
-	sources = {
-		nls.builtins.formatting.stylua,
-		nls.builtins.formatting.shfmt,
-
-		nls.builtins.code_actions.shellcheck,
-
-		nls.builtins.diagnostics.luacheck,
-		nls.builtins.diagnostics.shellcheck,
-	},
-})
-
 local on_attach = function(_, bufnr)
 	local function buf_set_option(...)
 		vim.api.nvim_buf_set_option(bufnr, ...)
@@ -442,9 +433,31 @@ lsp_config.dockerls.setup({
 	capabilities = capabilities,
 })
 
+lsp_config.jedi_language_server.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 lsp_config.jsonnet_ls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+})
+
+lsp_config.ltex.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	cmd = { "/Users/liza/.local/ltex-ls/bin/ltex-ls" },
+})
+
+lsp_config.omnisharp.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	cmd = {
+		"/Users/liza/.local/omnisharp-osx-arm64/OmniSharp",
+		"--languageserver",
+		"--hostPID",
+		tostring(vim.fn.getpid()),
+	},
 })
 
 lsp_config.powershell_es.setup({
@@ -477,40 +490,57 @@ lsp_config.powershell_es.setup({
 	},
 })
 
+lsp_config.pylsp.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lsp_config.pyre.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lsp_config.pyright.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 lsp_config.solargraph.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
-lsp_config.sumneko_lua.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		Lua = {
-			runtime = {
-				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-				version = "LuaJIT",
-				-- Setup your lua path
-				path = runtime_path,
-			},
-			diagnostics = {
-				-- Get the language server to recognize the `vim` global
-				globals = { "vim" },
-			},
-			workspace = {
-				-- Make the server aware of Neovim runtime files
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
-			-- Do not send telemetry data containing a randomized but unique identifier
-			telemetry = {
-				enable = false,
+lsp_config.sumneko_lua.setup(require("lua-dev").setup({
+	lspconfig = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+		settings = {
+			Lua = {
+				runtime = {
+					-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+					version = "LuaJIT",
+					-- Setup your lua path
+					path = runtime_path,
+				},
+				diagnostics = {
+					-- Get the language server to recognize the `vim` global
+					globals = { "vim" },
+				},
+				workspace = {
+					-- Make the server aware of Neovim runtime files
+					library = vim.api.nvim_get_runtime_file("", true),
+				},
+				-- Do not send telemetry data containing a randomized but unique identifier
+				telemetry = {
+					enable = false,
+				},
 			},
 		},
+		flags = {
+			debounce_text_changes = 150,
+		},
 	},
-	flags = {
-		debounce_text_changes = 150,
-	},
-})
+}))
 
 lsp_config.tailwindcss.setup({
 	on_attach = on_attach,
@@ -522,9 +552,19 @@ lsp_config.yamlls.setup({
 	capabilities = capabilities,
 })
 
-lsp_config["null-ls"].setup({
+local nls = require("null-ls")
+nls.setup({
 	on_attach = on_attach,
-	capabilities = capabilities,
+	update_in_insert = true,
+	sources = {
+		nls.builtins.formatting.stylua,
+		nls.builtins.formatting.shfmt,
+
+		nls.builtins.code_actions.shellcheck,
+
+		nls.builtins.diagnostics.luacheck,
+		nls.builtins.diagnostics.shellcheck,
+	},
 })
 
 require("trouble").setup()
@@ -608,3 +648,21 @@ vim.opt.timeoutlen = 50
 require("which-key").setup()
 
 require("legendary").setup()
+
+vim.g.tokyonight_colors = {
+	-- default is too purplish
+	fg = "#e6e5e1",
+}
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_italic_keywords = true
+vim.g.tokyonight_italic_comments = true
+vim.g.tokyonight_italic_functions = true
+vim.g.tokyonight_italic_variables = false
+vim.g.tokyonight_transparent = true
+vim.g.tokyonight_lualine_bold = true
+--vim.cmd([[colorscheme tokyonight]])
+
+require("kanagawa").setup({
+	transparent = true,
+})
+vim.cmd([[colorscheme kanagawa]])
