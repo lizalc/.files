@@ -460,6 +460,11 @@ lsp_config.jsonnet_ls.setup({
 	capabilities = capabilities,
 })
 
+lsp_config.lemminx.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 lsp_config.ltex.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
