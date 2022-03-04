@@ -5,14 +5,13 @@ tap "homebrew/cask-versions"
 tap "homebrew/command-not-found"
 tap "homebrew/core"
 tap "lizalc/misc"
-tap "teamookla/speedtest"
 tap "tidwall/jj"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Language Server for Bash
 brew "bash-language-server"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
 # Cross-platform make
@@ -79,33 +78,33 @@ brew "ruby"
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
+# GTK client/libraries for SPICE
+brew "spice-gtk"
 # Opinionated Lua code formatter
 brew "stylua"
 # Tool to detect and prevent secrets from getting checked in
 brew "talisman"
+# Text interface for Git repositories
+brew "tig"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
+# Watch files and take action when they change
+brew "watchman"
 # Language Server for Yaml Files
 brew "yaml-language-server"
+# Process YAML documents from the CLI
+brew "yq"
 # UNIX shell (command interpreter)
 brew "zsh"
 # A Language Server Protocol (LSP) server for Jsonnet
 brew "lizalc/misc/jsonnet-language-server", args: ["HEAD"]
-# Ookla Speedtest
-brew "teamookla/speedtest/speedtest"
 # jj
 brew "tidwall/jj/jj"
 # Monospaced font that includes programming ligatures
 cask "font-cascadia-code"
 # All Nerd Fonts glyphs, monospaced font, generated from Cascadia Code
 cask "font-delugia-complete"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2-beta"
-# Command-line shell and scripting language
-cask "powershell"
-# Move and resize windows using keyboard shortcuts or snap areas
-cask "rectangle"
-# GUI for the Neovim text editor
-cask "vimr"
+# OpenJDK distribution from Microsoft
+cask "microsoft-openjdk"

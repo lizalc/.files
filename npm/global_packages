@@ -1,4 +1,4 @@
-language-server
+@tailwindcss/language-server
 badgen-cli
 conventional-changelog-angular
 conventional-changelog-cli
@@ -7,9 +7,11 @@ conventional-changelog-preset-loader
 conventional-recommended-bump
 dockerfile-language-server-nodejs
 git-removed-branches
+language-server
 markdownlint-cli2
 neovim
 npm
+pyright
 semantic-release
 vega-cli
 vega-lite

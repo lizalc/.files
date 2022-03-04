@@ -7,7 +7,7 @@
 	<key>BracketedPasteMode</key>
 	<true/>
 	<key>CheckTestRelease</key>
-	<false/>
+	<true/>
 	<key>Command</key>
 	<string></string>
 	<key>Custom Color Presets</key>
@@ -2302,6 +2302,8 @@
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
+			<key>Use libtickit protocol</key>
+			<false/>
 			<key>Vertical Spacing</key>
 			<real>1.01</real>
 			<key>Visual Bell</key>
@@ -3993,6 +3995,8 @@
 	<false/>
 	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
 	<true/>
+	<key>PromptOnQuitEvenIfThereAreNoWindows</key>
+	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>

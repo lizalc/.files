@@ -231,6 +231,23 @@ packer.startup({
 			end,
 		})
 
+		use({
+			"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+			as = "lsp_lines",
+			config = function()
+				require("lsp_lines").register_lsp_virtual_lines()
+			end,
+		})
+
+		use({
+			"norcalli/nvim-colorizer.lua",
+			config = function()
+				require("colorizer").setup({
+					lua = { mode = "foreground" },
+				})
+			end,
+		})
+
 		if packer_bootstrap then
 			packer.sync()
 		end
@@ -244,7 +261,7 @@ packer.startup({
 	},
 })
 
-vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
+-- vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
 
 vim.opt.showmode = false
 vim.opt.spell = true
@@ -265,11 +282,11 @@ vim.opt.clipboard = "unnamed"
 vim.opt.completeopt = "menu,menuone,noselect"
 
 vim.diagnostic.config({
-	virtual_text = true,
+	virtual_text = false, -- handled by lsp_lines plugin
 	signs = true,
 	underline = true,
 	update_in_insert = false,
-	severity_sort = false,
+	severity_sort = true,
 })
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -662,7 +679,15 @@ vim.g.tokyonight_transparent = true
 vim.g.tokyonight_lualine_bold = true
 --vim.cmd([[colorscheme tokyonight]])
 
+vim.wo.cursorline = true
+vim.wo.cursorlineopt = "number"
+
+local default_colors = require("kanagawa.colors").setup()
+
 require("kanagawa").setup({
 	transparent = true,
+	overrides = {
+		CursorLineNr = { fg = default_colors.oldWhite },
+	},
 })
 vim.cmd([[colorscheme kanagawa]])
