@@ -108,3 +108,5 @@ cask "font-cascadia-code"
 cask "font-delugia-complete"
 # OpenJDK distribution from Microsoft
 cask "microsoft-openjdk"
+# Video game digital distribution service
+cask "steam"
