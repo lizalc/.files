@@ -22,31 +22,34 @@ benchmark (0.2.0)
 
     a performance benchmarking library
 
-bigdecimal (1.4.1)
+bigdecimal (3.1.2, 1.4.1)
     Authors: Kenta Murata, Zachary Scott, Shigeo Kobayashi
     Homepage: https://github.com/ruby/bigdecimal
-    License: ruby
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    License: Ruby
+    Installed at (3.1.2): /Users/liza/.gem/ruby/2.6.0
+                 (1.4.1, default): /Library/Ruby/Gems/2.6.0
 
     Arbitrary-precision decimal floating-point number library.
 
-bundler (1.17.3, 1.17.2)
+bundler (2.3.8, 2.3.7, 1.17.2)
     Authors: André Arko, Samuel Giddins, Colby Swandale, Hiroshi
     Shibata, David Rodríguez, Grey Baker, Stephanie Morillo, Chris
     Morris, James Wen, Tim Moore, André Medeiros, Jessica Lynn Suttles,
     Terence Lee, Carl Lerche, Yehuda Katz
-    Homepage: http://bundler.io
+    Homepage: https://bundler.io
     License: MIT
-    Installed at (1.17.3): /Users/liza/.gem/ruby/2.6.0
+    Installed at (2.3.8): /Users/liza/.gem/ruby/2.6.0
+                 (2.3.7): /Users/liza/.gem/ruby/2.6.0
                  (1.17.2, default): /Library/Ruby/Gems/2.6.0
 
     The best way to manage your application's dependencies
 
-CFPropertyList (2.3.6)
+CFPropertyList (3.0.5, 2.3.6)
     Author: Christian Kruse
-    Homepage: http://github.com/ckruse/CFPropertyList
+    Homepage: https://github.com/ckruse/CFPropertyList
     License: MIT
-    Installed at: /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0
+    Installed at (3.0.5): /Users/liza/.gem/ruby/2.6.0
+                 (2.3.6): /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0
 
     Read, write and manipulate both binary and XML property lists as
     defined by apple
@@ -60,35 +63,39 @@ cmath (1.0.0)
     Provides Trigonometric and Transcendental functions for complex
     numbers
 
-csv (3.0.9)
+csv (3.2.2, 3.0.9)
     Authors: James Edward Gray II, Kouhei Sutou
     Homepage: https://github.com/ruby/csv
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (3.2.2): /Users/liza/.gem/ruby/2.6.0
+                 (3.0.9, default): /Library/Ruby/Gems/2.6.0
 
     CSV Reading and Writing
 
-date (2.0.0)
+date (3.2.2, 2.0.0)
     Author: Tadayoshi Funaba
     Homepage: https://github.com/ruby/date
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (3.2.2): /Users/liza/.gem/ruby/2.6.0
+                 (2.0.0, default): /Library/Ruby/Gems/2.6.0
 
     A subclass of Object includes Comparable module for handling dates.
 
-dbm (1.0.0)
+dbm (1.1.0, 1.0.0)
     Author: Yukihiro Matsumoto
     Homepage: https://github.com/ruby/dbm
     License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Installed at (1.1.0): /Users/liza/.gem/ruby/2.6.0
+                 (1.0.0, default): /Library/Ruby/Gems/2.6.0
 
     Provides a wrapper for the UNIX-style Database Manager Library
 
-did_you_mean (1.3.0)
+did_you_mean (1.6.1, 1.3.0)
     Author: Yuki Nishijima
-    Homepage: https://github.com/yuki24/did_you_mean
+    Homepage: https://github.com/ruby/did_you_mean
     License: MIT
-    Installed at: /Library/Ruby/Gems/2.6.0
+    Installed at (1.6.1): /Users/liza/.gem/ruby/2.6.0
+                 (1.3.0): /Library/Ruby/Gems/2.6.0
 
     "Did you mean?" experience in Ruby
 
@@ -109,20 +116,22 @@ e2mmap (0.1.0)
 
     Module for defining custom exceptions with specific messages.
 
-etc (1.0.1)
+etc (1.3.0, 1.0.1)
     Author: Yukihiro Matsumoto
     Homepage: https://github.com/ruby/etc
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (1.3.0): /Users/liza/.gem/ruby/2.6.0
+                 (1.0.1, default): /Library/Ruby/Gems/2.6.0
 
     Provides access to information typically stored in UNIX /etc
     directory.
 
-fcntl (1.0.0)
+fcntl (1.0.1, 1.0.0)
     Author: Yukihiro Matsumoto
     Homepage: https://github.com/ruby/fcntl
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (1.0.1): /Users/liza/.gem/ruby/2.6.0
+                 (1.0.0, default): /Library/Ruby/Gems/2.6.0
 
     Loads constants defined in the OS fcntl.h C header file
 
@@ -134,43 +143,48 @@ fiddle (1.0.0)
 
     A libffi wrapper for Ruby.
 
-fileutils (1.1.0)
+fileutils (1.6.0, 1.1.0)
     Author: Minero Aoki
     Homepage: https://github.com/ruby/fileutils
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (1.6.0): /Users/liza/.gem/ruby/2.6.0
+                 (1.1.0, default): /Library/Ruby/Gems/2.6.0
 
     Several file utility methods for copying, moving, removing, etc.
 
-forwardable (1.2.0)
+forwardable (1.3.2, 1.2.0)
     Author: Keiju ISHITSUKA
     Homepage: https://github.com/ruby/forwardable
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (1.3.2): /Users/liza/.gem/ruby/2.6.0
+                 (1.2.0, default): /Library/Ruby/Gems/2.6.0
 
     Provides delegation of specified methods to a designated object.
 
-io-console (0.4.7)
+io-console (0.5.11, 0.4.7)
     Author: Nobu Nakada
     Homepage: https://github.com/ruby/io-console
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (0.5.11): /Users/liza/.gem/ruby/2.6.0
+                 (0.4.7, default): /Library/Ruby/Gems/2.6.0
 
     Console interface
 
-ipaddr (1.2.2)
+ipaddr (1.2.4, 1.2.2)
     Authors: Akinori MUSHA, Hajimu UMEMOTO
     Homepage: https://github.com/ruby/ipaddr
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (1.2.4): /Users/liza/.gem/ruby/2.6.0
+                 (1.2.2, default): /Library/Ruby/Gems/2.6.0
 
     A class to manipulate an IP address in ruby
 
-irb (1.0.0)
+irb (1.4.1, 1.0.0)
     Author: Keiju ISHITSUKA
     Homepage: https://github.com/ruby/irb
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (1.4.1): /Users/liza/.gem/ruby/2.6.0
+                 (1.0.0, default): /Library/Ruby/Gems/2.6.0
 
     Interactive Ruby command-line tool for REPL (Read Eval Print Loop).
 
@@ -183,11 +197,12 @@ jaro_winkler (1.5.4)
     An implementation of Jaro-Winkler distance algorithm written \ in C
     extension which supports any kind of string encoding.
 
-json (2.1.0)
+json (2.6.1, 2.1.0)
     Author: Florian Frank
     Homepage: http://flori.github.com/json
     License: Ruby
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Installed at (2.6.1): /Users/liza/.gem/ruby/2.6.0
+                 (2.1.0, default): /Library/Ruby/Gems/2.6.0
 
     JSON Implementation for Ruby
 
@@ -208,53 +223,60 @@ kramdown-parser-gfm (1.1.0)
     kramdown-parser-gfm provides a kramdown parser for the GFM dialect
     of Markdown
 
-libxml-ruby (3.2.1)
+libxml-ruby (3.2.2, 3.2.1)
     Authors: Ross Bamform, Wai-Sun Chia, Sean Chittenden, Dan Janwoski,
     Anurag Priyam, Charlie Savage, Ryan Johnson
-    Homepage: http://xml4r.github.com/libxml-ruby
+    Homepage: https://xml4r.github.io/libxml-ruby/
     License: MIT
-    Installed at: /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0
+    Installed at (3.2.2): /Users/liza/.gem/ruby/2.6.0
+                 (3.2.1): /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0
 
     Ruby Bindings for LibXML2
 
-logger (1.3.0)
-    Author: SHIBATA Hiroshi
+logger (1.5.0, 1.3.0)
+    Authors: Naotoshi Seo, SHIBATA Hiroshi
     Homepage: https://github.com/ruby/logger
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (1.5.0): /Users/liza/.gem/ruby/2.6.0
+                 (1.3.0, default): /Library/Ruby/Gems/2.6.0
 
     Provides a simple logging utility for outputting messages.
 
-matrix (0.1.0)
+matrix (0.4.2, 0.1.0)
     Author: Marc-Andre Lafortune
     Homepage: https://github.com/ruby/matrix
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (0.4.2): /Users/liza/.gem/ruby/2.6.0
+                 (0.1.0, default): /Library/Ruby/Gems/2.6.0
 
     An implementation of Matrix and Vector classes.
 
-mini_portile2 (2.4.0)
+mini_portile2 (2.8.0, 2.7.1, 2.4.0)
     Authors: Luis Lavena, Mike Dalessio, Lars Kanis
-    Homepage: http://github.com/flavorjones/mini_portile
+    Homepage: https://github.com/flavorjones/mini_portile
     License: MIT
-    Installed at: /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0
+    Installed at (2.8.0): /Users/liza/.gem/ruby/2.6.0
+                 (2.7.1): /Users/liza/.gem/ruby/2.6.0
+                 (2.4.0): /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0
 
     Simplistic port-like solution for developers
 
-minitest (5.11.3)
+minitest (5.15.0, 5.11.3)
     Author: Ryan Davis
     Homepage: https://github.com/seattlerb/minitest
     License: MIT
-    Installed at: /Library/Ruby/Gems/2.6.0
+    Installed at (5.15.0): /Users/liza/.gem/ruby/2.6.0
+                 (5.11.3): /Library/Ruby/Gems/2.6.0
 
     minitest provides a complete suite of testing facilities supporting
     TDD, BDD, mocking, and benchmarking
 
-msgpack (1.4.2)
+msgpack (1.4.5, 1.4.4)
     Authors: Sadayuki Furuhashi, Theo Hultberg, Satoshi Tagomori
     Homepage: http://msgpack.org/
     License: Apache 2.0
-    Installed at: /Users/liza/.gem/ruby/2.6.0
+    Installed at (1.4.5): /Users/liza/.gem/ruby/2.6.0
+                 (1.4.4): /Users/liza/.gem/ruby/2.6.0
 
     MessagePack, a binary-based efficient data interchange format.
 
@@ -267,11 +289,12 @@ multi_json (1.15.0)
 
     A common interface to multiple JSON libraries.
 
-mutex_m (0.1.0)
+mutex_m (0.1.1, 0.1.0)
     Author: Keiju ISHITSUKA
     Homepage: https://github.com/ruby/mutex_m
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (0.1.1): /Users/liza/.gem/ruby/2.6.0
+                 (0.1.0, default): /Library/Ruby/Gems/2.6.0
 
     Mixin to extend objects to be handled like a Mutex.
 
@@ -291,13 +314,22 @@ net-telnet (0.2.0)
 
     Provides telnet client functionality.
 
-nokogiri (1.10.1)
-    Authors: Aaron Patterson, Mike Dalessio, Yoko Harada, Tim Elliott,
-    Akinori MUSHA, John Shahid, Lars Kanis
+nokogiri (1.13.3, 1.13.1, 1.10.1)
+    Platforms:
+        1.10.1: ruby
+        1.13.1: x86_64-darwin
+        1.13.3: x86_64-darwin
+    Authors: Mike Dalessio, Aaron Patterson, Yoko Harada, Akinori MUSHA,
+    John Shahid, Karol Bucek, Sam Ruby, Craig Barnes, Stephen Checkoway,
+    Lars Kanis, Sergio Arbeo, Timothy Elliott, Nobuyoshi Nakada
+    Homepage: https://nokogiri.org
     License: MIT
-    Installed at: /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0
+    Installed at (1.13.3): /Users/liza/.gem/ruby/2.6.0
+                 (1.13.1): /Users/liza/.gem/ruby/2.6.0
+                 (1.10.1): /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0
 
-    Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser
+    Nokogiri (鋸) makes it easy and painless to work with XML and HTML
+    from Ruby.
 
 openssl (2.1.2)
     Authors: Martin Bosslet, SHIBATA Hiroshi, Zachary Scott, Kazuki
@@ -308,11 +340,12 @@ openssl (2.1.2)
 
     OpenSSL provides SSL, TLS and general purpose cryptography.
 
-ostruct (0.1.0)
+ostruct (0.5.3, 0.1.0)
     Author: Marc-Andre Lafortune
     Homepage: https://github.com/ruby/ostruct
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (0.5.3): /Users/liza/.gem/ruby/2.6.0
+                 (0.1.0, default): /Library/Ruby/Gems/2.6.0
 
     Class to build custom data structures, similar to a Hash.
 
@@ -324,37 +357,49 @@ parallel (1.21.0)
 
     Run any kind of code in parallel processes
 
-parser (3.1.0.0)
+parser (3.1.1.0, 3.1.0.0)
     Author: whitequark
     Homepage: https://github.com/whitequark/parser
     License: MIT
-    Installed at: /Users/liza/.gem/ruby/2.6.0
+    Installed at (3.1.1.0): /Users/liza/.gem/ruby/2.6.0
+                 (3.1.0.0): /Users/liza/.gem/ruby/2.6.0
 
     A Ruby parser written in pure Ruby.
 
-power_assert (1.1.3)
+power_assert (2.0.1, 1.1.3)
     Author: Kazuki Tsujimoto
-    Homepage: https://github.com/k-tsj/power_assert
-    Licenses: 2-clause BSDL, Ruby's
-    Installed at: /Library/Ruby/Gems/2.6.0
+    Homepage: https://github.com/ruby/power_assert
+    Licenses: BSD-2-Clause, Ruby
+    Installed at (2.0.1): /Users/liza/.gem/ruby/2.6.0
+                 (1.1.3): /Library/Ruby/Gems/2.6.0
 
     Power Assert for Ruby
 
-prime (0.1.0)
-    Author: Yuki Sonoda
+prime (0.1.2, 0.1.0)
+    Author: Marc-Andre Lafortune
     Homepage: https://github.com/ruby/prime
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (0.1.2): /Users/liza/.gem/ruby/2.6.0
+                 (0.1.0, default): /Library/Ruby/Gems/2.6.0
 
     Prime numbers and factorization library.
 
-psych (3.1.0)
+psych (4.0.3, 3.1.0)
     Authors: Aaron Patterson, SHIBATA Hiroshi, Charles Oliver Nutter
     Homepage: https://github.com/ruby/psych
     License: MIT
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Installed at (4.0.3): /Users/liza/.gem/ruby/2.6.0
+                 (3.1.0, default): /Library/Ruby/Gems/2.6.0
 
     Psych is a YAML parser and emitter
+
+racc (1.6.0)
+    Authors: Minero Aoki, Aaron Patterson
+    Homepage: https://i.loveruby.net/en/projects/racc/
+    Licenses: Ruby, BSD-2-Clause
+    Installed at: /Users/liza/.gem/ruby/2.6.0
+
+    Racc is a LALR(1) parser generator
 
 rainbow (3.1.1)
     Authors: Marcin Kulik, Olle Jonsson
@@ -364,38 +409,41 @@ rainbow (3.1.1)
 
     Colorize printed text on ANSI terminals
 
-rake (12.3.3)
+rake (13.0.6, 12.3.3)
     Authors: Hiroshi SHIBATA, Eric Hodel, Jim Weirich
     Homepage: https://github.com/ruby/rake
     License: MIT
-    Installed at: /Library/Ruby/Gems/2.6.0
+    Installed at (13.0.6): /Users/liza/.gem/ruby/2.6.0
+                 (12.3.3): /Library/Ruby/Gems/2.6.0
 
     Rake is a Make-like program implemented in Ruby
 
-rbs (2.0.0)
-    Author: Soutaro Matsumoto
-    Homepage: https://github.com/ruby/rbs
-    Licenses: BSD-2-Clause, Ruby
-    Installed at: /Users/liza/.gem/ruby/2.6.0
-
-    Type signature for Ruby.
-
-rdoc (6.1.2.1)
+rdoc (6.4.0, 6.1.2.1)
     Authors: Eric Hodel, Dave Thomas, Phil Hagelberg, Tony Strauss,
     Zachary Scott, Hiroshi SHIBATA, ITOYANAGI Sakura
     Homepage: https://ruby.github.io/rdoc
     License: Ruby
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Installed at (6.4.0): /Users/liza/.gem/ruby/2.6.0
+                 (6.1.2.1, default): /Library/Ruby/Gems/2.6.0
 
     RDoc produces HTML and command-line documentation for Ruby projects
 
-regexp_parser (2.2.0)
+regexp_parser (2.2.1, 2.2.0)
     Author: Ammar Ali
     Homepage: https://github.com/ammar/regexp_parser
     License: MIT
-    Installed at: /Users/liza/.gem/ruby/2.6.0
+    Installed at (2.2.1): /Users/liza/.gem/ruby/2.6.0
+                 (2.2.0): /Users/liza/.gem/ruby/2.6.0
 
     Scanner, lexer, parser for ruby's regular expressions
+
+reline (0.3.1)
+    Author: aycabta
+    Homepage: https://github.com/ruby/reline
+    License: Ruby
+    Installed at: /Users/liza/.gem/ruby/2.6.0
+
+    Alternative GNU Readline or Editline implementation by pure Ruby.
 
 reverse_markdown (2.1.1)
     Author: Johannes Opper
@@ -405,35 +453,39 @@ reverse_markdown (2.1.1)
 
     Convert html code into markdown.
 
-rexml (3.1.9.1)
+rexml (3.2.5, 3.1.9.1)
     Author: Kouhei Sutou
     Homepage: https://github.com/ruby/rexml
     License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Installed at (3.2.5): /Users/liza/.gem/ruby/2.6.0
+                 (3.1.9.1, default): /Library/Ruby/Gems/2.6.0
 
     An XML toolkit for Ruby
 
-rss (0.2.7)
+rss (0.2.9, 0.2.7)
     Author: Kouhei Sutou
     Homepage: https://github.com/ruby/rss
     License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Installed at (0.2.9): /Users/liza/.gem/ruby/2.6.0
+                 (0.2.7, default): /Library/Ruby/Gems/2.6.0
 
     Family of libraries that support various formats of XML "feeds".
 
-rubocop (1.25.0)
+rubocop (1.25.1, 1.25.0)
     Authors: Bozhidar Batsov, Jonas Arvidsson, Yuji Nakayama
     Homepage: https://github.com/rubocop/rubocop
     License: MIT
-    Installed at: /Users/liza/.gem/ruby/2.6.0
+    Installed at (1.25.1): /Users/liza/.gem/ruby/2.6.0
+                 (1.25.0): /Users/liza/.gem/ruby/2.6.0
 
     Automatic Ruby code style checking tool.
 
-rubocop-ast (1.15.1)
+rubocop-ast (1.16.0, 1.15.1)
     Authors: Bozhidar Batsov, Jonas Arvidsson, Yuji Nakayama
     Homepage: https://github.com/rubocop/rubocop-ast
     License: MIT
-    Installed at: /Users/liza/.gem/ruby/2.6.0
+    Installed at (1.16.0): /Users/liza/.gem/ruby/2.6.0
+                 (1.15.1): /Users/liza/.gem/ruby/2.6.0
 
     RuboCop tools to deal with Ruby code AST.
 
@@ -462,15 +514,24 @@ sdbm (1.0.0)
     Provides a simple file-based key-value store with String keys and
     values.
 
-shell (0.7)
+shell (0.8.1, 0.7)
     Author: Keiju ISHITSUKA
     Homepage: https://github.com/ruby/shell
     License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Installed at (0.8.1): /Users/liza/.gem/ruby/2.6.0
+                 (0.7, default): /Library/Ruby/Gems/2.6.0
 
     An idiomatic Ruby interface for common UNIX shell commands.
 
-solargraph (0.44.2)
+singleton (0.1.1)
+    Author: Yukihiro Matsumoto
+    Homepage: https://github.com/ruby/singleton
+    Licenses: Ruby, BSD-2-Clause
+    Installed at: /Users/liza/.gem/ruby/2.6.0
+
+    The Singleton module implements the Singleton pattern.
+
+solargraph (0.44.3)
     Author: Fred Snyder
     Homepage: http://solargraph.org
     License: MIT
@@ -478,28 +539,31 @@ solargraph (0.44.2)
 
     A Ruby language server
 
-sqlite3 (1.3.13)
+sqlite3 (1.4.2, 1.3.13)
     Authors: Jamis Buck, Luis Lavena, Aaron Patterson
     Homepage: https://github.com/sparklemotion/sqlite3-ruby
-    License: BSD-3
-    Installed at: /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0
+    License: BSD-3-Clause
+    Installed at (1.4.2): /Users/liza/.gem/ruby/2.6.0
+                 (1.3.13): /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/gems/2.6.0
 
     This module allows Ruby programs to interface with the SQLite3
     database engine (http://www.sqlite.org)
 
-stringio (0.0.2)
+stringio (3.0.1, 0.0.2)
     Author: Nobu Nakada
     Homepage: https://github.com/ruby/stringio
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (3.0.1): /Users/liza/.gem/ruby/2.6.0
+                 (0.0.2, default): /Library/Ruby/Gems/2.6.0
 
     Pseudo IO on String
 
-strscan (1.0.0)
-    Author: Minero Aoki
+strscan (3.0.1, 1.0.0)
+    Authors: Minero Aoki, Sutou Kouhei
     Homepage: https://github.com/ruby/strscan
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (3.0.1): /Users/liza/.gem/ruby/2.6.0
+                 (1.0.0, default): /Library/Ruby/Gems/2.6.0
 
     Provides lexical scanning operations on a String.
 
@@ -511,11 +575,12 @@ sync (0.5.0)
 
     A module that provides a two-phase lock with a counter.
 
-test-unit (3.2.9)
+test-unit (3.5.3, 3.2.9)
     Authors: Kouhei Sutou, Haruka Yoshihara
     Homepage: http://test-unit.github.io/
-    Licenses: Ruby, PSFL
-    Installed at: /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSDL, PSFL
+    Installed at (3.5.3): /Users/liza/.gem/ruby/2.6.0
+                 (3.2.9): /Library/Ruby/Gems/2.6.0
 
     An xUnit family unit testing framework for Ruby.
 
@@ -527,11 +592,12 @@ thor (1.2.1)
 
     Thor is a toolkit for building powerful command-line interfaces.
 
-thwait (0.1.0)
+thwait (0.2.0, 0.1.0)
     Author: Keiju ISHITSUKA
     Homepage: https://github.com/ruby/thwait
     License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Installed at (0.2.0): /Users/liza/.gem/ruby/2.6.0
+                 (0.1.0, default): /Library/Ruby/Gems/2.6.0
 
     Watches for termination of multiple threads.
 
@@ -543,11 +609,12 @@ tilt (2.0.10)
 
     Generic interface to multiple Ruby template engines
 
-tracer (0.1.0)
+tracer (0.1.1, 0.1.0)
     Author: Keiju ISHITSUKA
     Homepage: https://github.com/ruby/tracer
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (0.1.1): /Users/liza/.gem/ruby/2.6.0
+                 (0.1.0, default): /Library/Ruby/Gems/2.6.0
 
     Outputs a source level execution trace of a Ruby program.
 
@@ -568,11 +635,12 @@ webrick (1.7.0, 1.4.4)
 
     HTTP server toolkit
 
-xmlrpc (0.3.0)
-    Author: SHIBATA Hiroshi
+xmlrpc (0.3.2, 0.3.0)
+    Authors: SHIBATA Hiroshi, Sutou Kouhei
     Homepage: https://github.com/ruby/xmlrpc
-    License: Ruby
-    Installed at: /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (0.3.2): /Users/liza/.gem/ruby/2.6.0
+                 (0.3.0): /Library/Ruby/Gems/2.6.0
 
     XMLRPC is a lightweight protocol that enables remote procedure calls
     over HTTP.
@@ -585,10 +653,11 @@ yard (0.9.27)
 
     Documentation tool for consistent and usable documentation in Ruby.
 
-zlib (1.0.0)
+zlib (2.1.1, 1.0.0)
     Authors: Yukihiro Matsumoto, UENO Katsuhiro
     Homepage: https://github.com/ruby/zlib
-    License: BSD-2-Clause
-    Installed at (default): /Library/Ruby/Gems/2.6.0
+    Licenses: Ruby, BSD-2-Clause
+    Installed at (2.1.1): /Users/liza/.gem/ruby/2.6.0
+                 (1.0.0, default): /Library/Ruby/Gems/2.6.0
 
     Ruby interface for the zlib compression/decompression library

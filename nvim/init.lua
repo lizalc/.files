@@ -131,6 +131,7 @@ packer.startup({
 
 		use({
 			"akinsho/bufferline.nvim",
+			branch = "main",
 			requires = "kyazdani42/nvim-web-devicons",
 		})
 
@@ -296,7 +297,8 @@ for type, icon in pairs(signs) do
 end
 
 require("nvim-treesitter.configs").setup({
-	ensure_installed = "maintained",
+	ensure_installed = "all",
+	ignore_install = { "phpdoc" },
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
@@ -421,6 +423,7 @@ local on_attach = function(_, bufnr)
 	local function buf_set_option(...)
 		vim.api.nvim_buf_set_option(bufnr, ...)
 	end
+
 	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	require("lsp_signature").on_attach({
@@ -633,6 +636,9 @@ local gps = require("nvim-gps")
 gps.setup()
 
 require("lualine").setup({
+	options = {
+		globalstatus = true,
+	},
 	sections = {
 		lualine_b = { "branch", "diff", "diagnostics", "filename", { gps.get_location, cond = gps.is_available } },
 		lualine_c = {},

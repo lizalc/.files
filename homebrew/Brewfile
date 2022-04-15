@@ -32,10 +32,14 @@ brew "fontforge"
 brew "fzf"
 # GNU awk utility
 brew "gawk"
+# GNU compiler collection
+brew "gcc"
 # Distributed revision control system
 brew "git"
 # Official GitLab CI runner
 brew "gitlab-runner"
+# Audit git repos for secrets
+brew "gitleaks"
 # Render markdown on the CLI
 brew "glow"
 # GNU implementation of the famous stream editor
@@ -92,6 +96,8 @@ brew "tree"
 brew "watch"
 # Watch files and take action when they change
 brew "watchman"
+# Internet file retriever
+brew "wget"
 # Language Server for Yaml Files
 brew "yaml-language-server"
 # Process YAML documents from the CLI
@@ -102,11 +108,17 @@ brew "zsh"
 brew "lizalc/misc/jsonnet-language-server", args: ["HEAD"]
 # jj
 brew "tidwall/jj/jj"
+# Tool to write Fedora images to portable media files
+cask "fedora-media-writer"
 # Monospaced font that includes programming ligatures
 cask "font-cascadia-code"
 # All Nerd Fonts glyphs, monospaced font, generated from Cascadia Code
 cask "font-delugia-complete"
+# GPU-based terminal emulator
+cask "kitty"
 # OpenJDK distribution from Microsoft
 cask "microsoft-openjdk"
+# Command-line shell and scripting language
+cask "powershell"
 # Video game digital distribution service
 cask "steam"

@@ -6,6 +6,8 @@
 	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>AlwaysOpenWindowAtStartup</key>
+	<true/>
 	<key>BracketedPasteMode</key>
 	<true/>
 	<key>CheckTestRelease</key>
@@ -1397,6 +1399,8 @@
 	<key>DefaultTabStopWidth</key>
 	<integer>4</integer>
 	<key>DisableCustomBoxDrawing</key>
+	<false/>
+	<key>EnableAPIServer</key>
 	<false/>
 	<key>EnableDivisionView</key>
 	<false/>
@@ -4006,7 +4010,7 @@
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>SolidUnderlines</key>
 	<true/>
 	<key>SoundForEsc</key>
