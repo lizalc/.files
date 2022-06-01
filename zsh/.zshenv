@@ -4,7 +4,17 @@ if [[ $OS_NAME == "Linux" ]]; then
 	eval $(luarocks path)
 
 	export NPM_CONFIG_USERCONFIG="${HOME}/.config/npm/npmrc"
-	export PATH="${HOME}/.local/bin:${HOME}/.local/npm/bin:${PATH}:/home/liza/.cargo/bin"
+	export PATH="${PATH}:/usr/lib/llvm/14/bin:${HOME}/.local/bin:${HOME}/.local/npm/bin:/home/liza/.cargo/bin"
+
+	# Gentoo dotnet package does not install to the expected /usr/share/dotnet directory.
+	# Set the root manually based on current dotnet executable location.
+	export DOTNET_ROOT="$(dirname $(readlink -f $(which dotnet)))"
+
+	export GOBIN="/home/liza/.local/bin"
+	export GOCACHE="/home/liza/.cache/go/go-build"
+	export GOENV="/home/liza/.config/go/env"
+	export GOMODCACHE="/home/liza/.cache/go/pkg/mod"
+	export GOPATH="/home/liza/.local/go"
 elif [[ $OS_NAME == "Darwin" ]]; then
 	# Enable color output for 'ls' and possibly other commands
 	export CLICOLOR=1
