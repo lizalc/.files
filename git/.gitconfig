@@ -18,7 +18,7 @@
 [core]
 	autocrlf = input
 	pager = less -F
-	excludesfile = ~/.global.gitignore
+	excludesfile = ~/.files/git/.global.gitignore
 	editor = nvim
 [init]
 	defaultBranch = main
@@ -38,5 +38,7 @@
 [color "diff-highlight"]
 	oldHighlight = ul
 	oldReset = noul
+[includeIf "gitdir/i:/mnt/c/**"]
+	path = ~/.files/git/.wsl.gitconfig
 [includeIf "gitdir/i:**/work/**"]
-	path = ~/.work.gitconfig
+	path = ~/.files/git/.work.gitconfig
