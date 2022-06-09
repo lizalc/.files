@@ -149,9 +149,12 @@ packer.startup({
             requires = "kyazdani42/nvim-web-devicons",
         })
 
-        use { 'akinsho/git-conflict.nvim', config = function()
-            require('git-conflict').setup()
-        end }
+        use({
+            "akinsho/git-conflict.nvim",
+            config = function()
+                require("git-conflict").setup()
+            end,
+        })
 
         use({
             "nvim-lualine/lualine.nvim",
@@ -726,7 +729,7 @@ vim.notify.setup({
     background_colour = default_colors.oldWhite
 })
 -- This should be working automatically but is not for an unknown reason.
-telescope.load_extension('notify')
+telescope.load_extension("notify")
 
 local client_notifs = {}
 local spinner_frames = { "⣾", "⣷", "⣯", "⣟", "⡿", "⢿", "⣻", "⣽", }
