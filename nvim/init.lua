@@ -649,10 +649,17 @@ gps.setup()
 
 local function lsp_clients()
 	local clients = {}
+	local has_clients = false
 	for _, client in pairs(vim.lsp.get_active_clients()) do
 		table.insert(clients, client.name)
+		has_clients = true
 	end
-	return " " .. table.concat(clients, "  ")
+
+	if has_clients then
+		return " " .. table.concat(clients, "  ")
+    else
+        return ""
+	end
 end
 
 require("lualine").setup({
