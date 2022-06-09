@@ -78,6 +78,10 @@ packer.startup({
                 "L3MON4D3/LuaSnip",
                 "saadparwaiz1/cmp_luasnip",
                 "onsails/lspkind-nvim",
+                {
+                    "petertriho/cmp-git",
+                    requires = "nvim-lua/plenary.nvim",
+                },
             },
         })
 
@@ -440,6 +444,15 @@ cmp.setup.cmdline(":", {
     sources = cmp.config.sources({
         { name = "path" },
         { name = "cmdline" },
+    }),
+})
+
+require("cmp_git").setup()
+cmp.setup.filetype("gitcommit", {
+    sources = cmp.config.sources({
+        { name = "git" },
+        { name = "luasnip" },
+        { name = "buffer" },
     }),
 })
 
