@@ -74,6 +74,7 @@ packer.startup({
                 "hrsh7th/cmp-path",
                 "hrsh7th/cmp-cmdline",
                 "hrsh7th/cmp-nvim-lua",
+                "hrsh7th/cmp-nvim-lsp-signature-help",
                 "L3MON4D3/LuaSnip",
                 "saadparwaiz1/cmp_luasnip",
                 "onsails/lspkind-nvim",
@@ -89,7 +90,6 @@ packer.startup({
             "neovim/nvim-lspconfig",
             requires = {
                 "hrsh7th/nvim-cmp",
-                "ray-x/lsp_signature.nvim",
             },
         })
 
@@ -419,6 +419,7 @@ cmp.setup({
         { name = "nvim_lua" },
         { name = "luasnip" },
         { name = "buffer" },
+        { name = "nvim_lsp_signature_help" },
     }),
 })
 
@@ -445,13 +446,6 @@ local on_attach = function(_, bufnr)
     end
 
     buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-
-    require("lsp_signature").on_attach({
-        bind = true,
-        handler_opts = {
-            border = "rounded",
-        },
-    }, bufnr)
 end
 
 local runtime_path = vim.split(package.path, ";")
