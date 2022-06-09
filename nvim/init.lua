@@ -729,7 +729,7 @@ vim.notify.setup({
 telescope.load_extension('notify')
 
 local client_notifs = {}
-local spinner_frames = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" } -- spinners
+local spinner_frames = { "⣾", "⣷", "⣯", "⣟", "⡿", "⢿", "⣻", "⣽", }
 
 local function update_spinner(notif_data) -- update spinner helper function to defer
     if notif_data.spinner then
