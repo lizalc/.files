@@ -586,20 +586,20 @@ lsp_config.yamlls.setup({
     capabilities = capabilities,
 })
 
--- local nls = require("null-ls")
--- nls.setup({
--- 	on_attach = on_attach,
--- 	update_in_insert = true,
--- 	sources = {
--- 		nls.builtins.formatting.stylua,
--- 		nls.builtins.formatting.shfmt,
---
--- 		nls.builtins.code_actions.shellcheck,
---
--- 		nls.builtins.diagnostics.luacheck,
--- 		nls.builtins.diagnostics.shellcheck,
--- 	},
--- })
+local nls = require("null-ls")
+nls.setup({
+    on_attach = on_attach,
+    update_in_insert = true,
+    sources = {
+        -- nls.builtins.formatting.stylua,
+        nls.builtins.formatting.shfmt,
+
+        nls.builtins.code_actions.shellcheck,
+
+        nls.builtins.diagnostics.luacheck,
+        nls.builtins.diagnostics.shellcheck,
+    },
+})
 
 require("trouble").setup()
 require("luasnip.loaders.from_vscode").load()
