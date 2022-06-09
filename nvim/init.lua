@@ -644,6 +644,14 @@ require("bufferline").setup({
 local gps = require("nvim-gps")
 gps.setup()
 
+local function lsp_clients()
+    local clients = {}
+    for _, client in pairs(vim.lsp.get_active_clients()) do
+        table.insert(clients, client.name)
+    end
+    return " " .. table.concat(clients, "  ")
+end
+
 require("lualine").setup({
     options = {
         globalstatus = true,
@@ -651,6 +659,7 @@ require("lualine").setup({
     sections = {
         lualine_b = { "branch", "diff", "diagnostics", "filename", { gps.get_location, cond = gps.is_available } },
         lualine_c = {},
+        lualine_x = { { lsp_clients, cond = vim.lsp.server_ready }, "encoding", "fileformat", "filetype" },
     },
 })
 
