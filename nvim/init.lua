@@ -9,13 +9,6 @@
 vim.g.do_filetype_lua = 1
 vim.opt.termguicolors = true
 
-vim.cmd([[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost init.lua source <afile> | PackerCompile
-    augroup end
-]])
-
 local packer_bootstrap = nil
 
 -- Bootstrap packer.nvim, if necessary
@@ -37,6 +30,20 @@ end
 local packer = require("packer")
 packer.init()
 packer.reset()
+
+local augroup_packer = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePost", {
+    callback = function()
+        packer.compile()
+        vim.notify("init.lua compiled! Restart to use new config.", "info", {
+            title = "Packer",
+            timeout = 2000,
+        })
+    end,
+    desc = "Compile init.lua on write.",
+    pattern = "init.lua",
+    group = augroup_packer,
+})
 
 packer.startup({
     function(use)
@@ -269,7 +276,13 @@ packer.startup({
     },
 })
 
-vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+    pattern = "*",
+    desc = "Update nvim-lightbulb",
+    callback = function()
+        require("nvim-lightbulb").update_lightbulb()
+    end,
+})
 
 vim.opt.showmode = false
 vim.opt.spell = true
