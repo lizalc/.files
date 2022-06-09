@@ -285,14 +285,6 @@ packer.startup({
 	},
 })
 
-vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-	pattern = "*",
-	desc = "Update nvim-lightbulb",
-	callback = function()
-		require("nvim-lightbulb").update_lightbulb()
-	end,
-})
-
 vim.opt.showmode = false
 vim.opt.spell = true
 
@@ -324,6 +316,15 @@ for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
+local lightbulb = "LightBulbSign"
+vim.fn.sign_define(lightbulb, { text = signs["Hint"], texthl = lightbulb, linehl = lightbulb, numhl = lightbulb })
+
+require("nvim-lightbulb").setup({
+	autocmd = {
+		enabled = true,
+	},
+})
 
 require("nvim-treesitter.configs").setup({
 	ensure_installed = "all",
@@ -657,8 +658,8 @@ local function lsp_clients()
 
 	if has_clients then
 		return " " .. table.concat(clients, "  ")
-    else
-        return ""
+	else
+		return ""
 	end
 end
 
