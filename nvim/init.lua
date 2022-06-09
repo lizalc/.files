@@ -812,27 +812,31 @@ vim.api.nvim_create_autocmd("User", {
     end,
 })
 
-local function copy(lines, _)
-    vim.fn.OSCYankString(table.concat(lines, "\n"))
-end
+-- using oscyank on macOS interferes with what I'm used too. Probably just need to
+-- tweak the config but for now only use it on Linux / WSL.
+if os.getenv("OS_NAME") == "Linux" then
+    local function copy(lines, _)
+        vim.fn.OSCYankString(table.concat(lines, "\n"))
+    end
 
-local function paste()
-    return {
-        vim.fn.split(vim.fn.getreg(''), '\n'),
-        vim.fn.getregtype('')
+    local function paste()
+        return {
+            vim.fn.split(vim.fn.getreg("", nil, nil), "\n"),
+            vim.fn.getregtype(""),
+        }
+    end
+
+    vim.g.clipboard = {
+        name = "osc52",
+        copy = {
+            ["+"] = copy,
+            ["*"] = copy,
+        },
+        paste = {
+            ["+"] = paste,
+            ["*"] = paste,
+        },
     }
+
+    vim.g.oscyank_silent = true
 end
-
-vim.g.clipboard = {
-    name = "osc52",
-    copy = {
-        ["+"] = copy,
-        ["*"] = copy
-    },
-    paste = {
-        ["+"] = paste,
-        ["*"] = paste
-    }
-}
-
-vim.g.oscyank_silent = true
