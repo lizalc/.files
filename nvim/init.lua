@@ -170,6 +170,7 @@ packer.startup({
                 "nvim-treesitter/nvim-treesitter",
                 "neovim/nvim-lspconfig",
                 "nvim-lua/plenary.nvim",
+                "nvim-telescope/telescope-symbols.nvim",
                 { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
                 {
                     "nvim-telescope/telescope-frecency.nvim",
