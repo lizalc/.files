@@ -671,7 +671,7 @@ require("lualine").setup({
 			"branch",
 			{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
 			"diagnostics",
-			"filename",
+			{ "filename", symbols = { modified = "  ", readonly = " ", unnamed = "[No Name]" } },
 			{ gps.get_location, cond = gps.is_available },
 		},
 		lualine_c = {},
