@@ -22,7 +22,7 @@ local packer_bootstrap = nil
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
-if fn.empty(fn.glob(install_path)) > 0 then
+if fn.empty(fn.glob(install_path, nil, nil)) > 0 then
     packer_bootstrap = fn.system({
         "git",
         "clone",
@@ -495,7 +495,7 @@ lsp_config.omnisharp.setup({
 lsp_config.powershell_es.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    bundle_path = vim.fn.glob "$HOME/.vscode*-insiders/extensions/ms-vscode.powershell-preview-*/modules",
+    bundle_path = vim.fn.glob("$HOME/.vscode*-insiders/extensions/ms-vscode.powershell-preview-*/modules", nil, nil),
 })
 
 lsp_config.pylsp.setup({
@@ -513,16 +513,13 @@ lsp_config.pyright.setup({
     capabilities = capabilities,
 })
 
--- lsp_config.solargraph.setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
--- })
-
 lsp_config.sumneko_lua.setup(require("lua-dev").setup({
     lspconfig = {
         on_attach = on_attach,
         capabilities = capabilities,
-        cmd = { vim.fn.glob("$HOME/.vscode*-insiders/extensions/sumneko.lua-*/server/bin/lua-language-server") },
+        cmd = {
+            vim.fn.glob("$HOME/.vscode*-insiders/extensions/sumneko.lua-*/server/bin/lua-language-server", nil, nil),
+        },
         settings = {
             Lua = {
                 runtime = {
