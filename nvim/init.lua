@@ -660,7 +660,13 @@ require("lualine").setup({
 		globalstatus = true,
 	},
 	sections = {
-		lualine_b = { "branch", "diff", "diagnostics", "filename", { gps.get_location, cond = gps.is_available } },
+		lualine_b = {
+			"branch",
+			{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
+			"diagnostics",
+			"filename",
+			{ gps.get_location, cond = gps.is_available },
+		},
 		lualine_c = {},
 		lualine_x = { { lsp_clients, cond = vim.lsp.server_ready }, "encoding", "fileformat", "filetype" },
 	},
