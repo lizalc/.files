@@ -594,7 +594,7 @@ nls.setup({
     on_attach = on_attach,
     update_in_insert = true,
     sources = {
-        -- nls.builtins.formatting.stylua,
+        nls.builtins.formatting.stylua,
         nls.builtins.formatting.shfmt,
 
         nls.builtins.code_actions.shellcheck,
