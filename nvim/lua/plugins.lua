@@ -17,8 +17,6 @@ if fn.empty(fn.glob(install_path, nil, nil)) > 0 then
 end
 
 local packer = require("packer")
-packer.init()
-packer.reset()
 
 local augroup_packer = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
@@ -34,6 +32,8 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	group = augroup_packer,
 })
 
+packer.init()
+packer.reset()
 packer.startup({
 	function(use)
 		use("wbthomason/packer.nvim")
