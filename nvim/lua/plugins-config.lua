@@ -18,17 +18,18 @@ end
 
 local packer = require("packer")
 
+local configfile = debug.getinfo(1, "S").source:sub(2):match("[^/]*.lua$")
 local augroup_packer = vim.api.nvim_create_augroup("packer_user_config", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
 	callback = function()
 		packer.compile()
-		vim.notify("plugins.lua compiled! Restart to use new config.", "info", {
+		vim.notify(configfile .. " compiled! Restart to use new config.", "info", {
 			title = "Packer",
 			timeout = 2000,
 		})
 	end,
-	desc = "Compile plugins.lua on write.",
-	pattern = "plugins.lua",
+	desc = "Compile " .. configfile .. " on write.",
+	pattern = configfile,
 	group = augroup_packer,
 })
 

@@ -68,7 +68,6 @@ require("twilight").setup()
 require("nvim-tree").setup()
 require("neogit").setup()
 
-
 require("cheatsheet").setup({
 	bundled_cheatsheets = {
 		disabled = {
