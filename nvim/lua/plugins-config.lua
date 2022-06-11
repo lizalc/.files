@@ -87,6 +87,11 @@ packer.startup({
 			},
 		})
 
+		use({
+			"SmiteshP/nvim-navic",
+			requires = "neovim/nvim-lspconfig",
+		})
+
 		use("kosayoda/nvim-lightbulb")
 
 		use({
@@ -153,7 +158,6 @@ packer.startup({
 					"kyazdani42/nvim-web-devicons",
 					opt = true,
 				},
-				"SmiteshP/nvim-gps",
 			},
 		})
 

@@ -1,5 +1,4 @@
-local gps = require("nvim-gps")
-gps.setup()
+local navic = require("nvim-navic")
 
 local function lsp_clients()
 	local clients = {}
@@ -26,7 +25,12 @@ require("lualine").setup({
 			{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
 			"diagnostics",
 			{ "filename", symbols = { modified = "  ", readonly = " ", unnamed = "[No Name]" } },
-			{ gps.get_location, cond = gps.is_available },
+			{
+				function()
+					pcall(navic.get_location())
+				end,
+				cond = navic.is_available,
+			},
 		},
 		lualine_c = {},
 		lualine_x = { { lsp_clients, cond = vim.lsp.server_ready }, "encoding", "fileformat", "filetype" },
