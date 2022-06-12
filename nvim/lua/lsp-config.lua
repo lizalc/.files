@@ -1,21 +1,10 @@
 local lsp_config = require("lspconfig")
-local navic = require("nvim-navic")
 
--- Some LSP servers don't fully follow the spec and can return unexpected data.
--- This causes navic to repeatedly throw an error. This function is used to
--- prevent navic from attaching to these problematic LSP servers.
-local navic_supported = function(server_name)
-	local navic_not_supported = { "ltex", "null-ls", "powershell_es" }
-	local is_supported = true
-
-	for _, name in ipairs(navic_not_supported) do
-		if server_name == name then
-			is_supported = false
-		end
-	end
-
-	return is_supported
-end
+local _aerial = require("aerial")
+_aerial.setup({
+	backends = { "lsp", "treesitter" },
+	filter_kind = false,
+})
 
 local on_attach = function(client, bufnr)
 	local function buf_set_option(...)
@@ -24,10 +13,7 @@ local on_attach = function(client, bufnr)
 
 	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
-	if navic_supported(client.name) then
-		navic.attach(client, bufnr)
-		vim.notify("navic attached to: " .. client.name .. "!")
-	end
+	_aerial.on_attach(client, bufnr)
 end
 
 local runtime_path = vim.split(package.path, ";")

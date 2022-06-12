@@ -1,5 +1,3 @@
-local navic = require("nvim-navic")
-
 local function lsp_clients()
 	local clients = {}
 	local has_clients = false
@@ -25,12 +23,7 @@ require("lualine").setup({
 			{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
 			"diagnostics",
 			{ "filename", symbols = { modified = "  ", readonly = " ", unnamed = "[No Name]" } },
-			{
-				function()
-					pcall(navic.get_location())
-				end,
-				cond = navic.is_available,
-			},
+			"aerial",
 		},
 		lualine_c = {},
 		lualine_x = { { lsp_clients, cond = vim.lsp.server_ready }, "encoding", "fileformat", "filetype" },

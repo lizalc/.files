@@ -88,8 +88,11 @@ packer.startup({
 		})
 
 		use({
-			"SmiteshP/nvim-navic",
-			requires = "neovim/nvim-lspconfig",
+			"stevearc/aerial.nvim",
+			requires = {
+				"nvim-treesitter/nvim-treesitter",
+				"neovim/nvim-lspconfig",
+			},
 		})
 
 		use("kosayoda/nvim-lightbulb")
