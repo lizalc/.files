@@ -19,8 +19,11 @@ require("lualine-config")
 require("notify-config")
 require("telescope-config")
 
+vim.o.cmdheight = "0"
+
 vim.opt.showmode = false
 vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -67,6 +70,9 @@ require("spellsitter").setup()
 require("twilight").setup()
 require("nvim-tree").setup()
 require("neogit").setup()
+require("virt-column").setup({
+	char = "┊", -- same character used in indent-blankline-config, should deduplicate.
+})
 
 require("cheatsheet").setup({
 	bundled_cheatsheets = {
@@ -119,6 +125,10 @@ require("kanagawa").setup({
 	},
 })
 vim.cmd([[colorscheme kanagawa]])
+vim.cmd([[highlight ColorColumn ctermbg=none guibg=none]])
+vim.cmd("highlight VirtColumn guifg=" .. default_colors.winterRed)
+
+vim.wo.colorcolumn = "90"
 
 -- using oscyank on macOS interferes with what I'm used too. Probably just need to
 -- tweak the config but for now only use it on Linux / WSL.
@@ -148,3 +158,19 @@ if os.getenv("OS_NAME") == "Linux" then
 
 	vim.g.oscyank_silent = true
 end
+
+vim.api.nvim_set_keymap("n", "<C-.>", "<cmd>CodeActionMenu<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-.>", "<cmd>CodeActionMenu<CR>", { noremap = true, silent = true })
+
+local format = function()
+	vim.notify("Formatting...", vim.log.levels.INFO, { title = "Auto Format", timeout = 100 })
+	vim.lsp.buf.format({ async = true })
+end
+
+local save = function()
+	vim.notify("Saving current buffer", vim.log.levels.INFO, { timeout = 100 })
+	vim.cmd([[w]])
+end
+
+vim.api.nvim_set_keymap("n", "<C-s>", "<cmd>w<CR>", { noremap = true, silent = true, callback = save })
+vim.api.nvim_set_keymap("n", "<C-/>", "", { noremap = true, silent = true, callback = format })

@@ -136,12 +136,19 @@ nls.setup({
 	on_attach = on_attach,
 	update_in_insert = true,
 	sources = {
+		nls.builtins.formatting.prettier.with({
+			filetypes = { "markdown" },
+		}),
 		nls.builtins.formatting.stylua,
 		nls.builtins.formatting.shfmt,
 
+		nls.builtins.code_actions.proselint,
 		nls.builtins.code_actions.shellcheck,
 
+		nls.builtins.diagnostics.codespell,
+		nls.builtins.diagnostics.editorconfig_checker,
 		nls.builtins.diagnostics.luacheck,
 		nls.builtins.diagnostics.shellcheck,
+		nls.builtins.diagnostics.zsh,
 	},
 })

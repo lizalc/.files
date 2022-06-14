@@ -21,7 +21,7 @@ cmp.setup({
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
+			select = false,
 		}),
 		["<Tab>"] = function(fallback)
 			if cmp.visible() then
@@ -48,19 +48,32 @@ cmp.setup({
 			maxwidth = 50,
 			menu = {
 				buffer = "[Buffer]",
+				cmdline = "[CLI]",
+				dictionary = "[Dict]",
+				git = "[Git]",
+				luasnip = "[LuaSnip]",
 				nvim_lsp = "[LSP]",
 				nvim_lua = "[Lua]",
+				nvim_lsp_signature_help = "[Signature]",
 				path = "[Path]",
-				luasnip = "[LuaSnip]",
+				spell = "[Spell]",
 			},
 		}),
 	},
 	sources = cmp.config.sources({
+		{ name = "buffer" },
+		{ name = "luasnip" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
 		{ name = "nvim_lsp_signature_help" },
+		{
+			name = "spell",
+			keyword_length = 2,
+		},
+		{
+			name = "dictionary",
+			keyword_length = 2,
+		},
 	}),
 })
 
@@ -74,20 +87,26 @@ cmp.setup.cmdline("/", {
 cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
-		{ name = "path" },
 		{ name = "cmdline" },
+		{ name = "path" },
 	}),
 })
 
 require("cmp_git").setup()
 cmp.setup.filetype("gitcommit", {
 	sources = cmp.config.sources({
+		{ name = "buffer" },
 		{ name = "git" },
 		{ name = "luasnip" },
-		{ name = "buffer" },
 	}),
 })
 
 require("nvim-autopairs").setup()
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+
+require("cmp_dictionary").setup({
+	dic = { ["*"] = { "/usr/share/dict/words" } },
+	first_case_insensive = true,
+	async = true,
+})
