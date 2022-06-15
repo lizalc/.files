@@ -1,0 +1,3 @@
+cache=/home/liza/.cache/npm
+init-module=/home/liza/.config/npm/npm-init.js
+prefix=/home/liza/.local/npm

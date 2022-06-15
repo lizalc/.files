@@ -15,3 +15,8 @@ pyright
 semantic-release
 vega-cli
 vega-lite
+yaml-language-server
+tailwindcss-language-server
+npx
+bash-language-server
+shellcheck
