@@ -37,7 +37,7 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = -1
 vim.opt.expandtab = true
 
-vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = "menu,menuone,noselect"
 
 vim.diagnostic.config({
@@ -146,8 +146,8 @@ vim.cmd("highlight VirtColumn guifg=" .. default_colors.winterRed)
 vim.wo.colorcolumn = "90"
 
 -- using oscyank on macOS interferes with what I'm used too. Probably just need to
--- tweak the config but for now only use it on Linux / WSL.
-if os.getenv("OS_NAME") == "Linux" then
+-- tweak the config but for now only use it on WSL.
+if os.getenv("OS_NAME") == "WSL" then
 	local function copy(lines, _)
 		vim.fn.OSCYankString(table.concat(lines, "\n"))
 	end
