@@ -26,5 +26,5 @@ elif [[ $OS_NAME == "Darwin" ]]; then
 
 	# Add `diff-highlight` and local bins to the $PATH
 	diffPath="/opt/homebrew/opt/git/share/git-core/contrib/diff-highlight"
-	export PATH="/opt/homebrew/opt/python@3.10/bin:${PATH}:${diffPath}:/opt/homebrew/opt/llvm/bin:${HOME}/.gem/ruby/2.6.0/bin:${HOME}/.local/bin"
+    export PATH="/opt/homebrew/opt/python@3.10/bin:${PATH}:${diffPath}:/opt/homebrew/opt/llvm/bin:${HOME}/.gem/ruby/2.6.0/bin:${HOME}/.local/bin:${HOME}/go/bin"
 fi

@@ -35,6 +35,7 @@ plugins=(
 	gem
 	git
 	gitignore
+	golang
 	fzf
 	npm
 	pip
