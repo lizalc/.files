@@ -19,7 +19,7 @@ require("lualine-config")
 require("notify-config")
 require("telescope-config")
 
-vim.o.cmdheight = "0"
+-- vim.o.cmdheight = "0"
 
 vim.opt.showmode = false
 vim.opt.spell = true
@@ -70,6 +70,21 @@ require("spellsitter").setup()
 require("twilight").setup()
 require("nvim-tree").setup()
 require("neogit").setup()
+
+local dap, dapui = require("dap"), require("dapui")
+dapui.setup()
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
+require("dap-go").setup()
+require("nvim-dap-virtual-text").setup()
+
 require("virt-column").setup({
 	char = "┊", -- same character used in indent-blankline-config, should deduplicate.
 })

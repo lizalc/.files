@@ -33,6 +33,11 @@ lsp_config.dockerls.setup({
 	capabilities = capabilities,
 })
 
+lsp_config.gopls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 lsp_config.jedi_language_server.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -136,6 +141,9 @@ nls.setup({
 	on_attach = on_attach,
 	update_in_insert = true,
 	sources = {
+		nls.builtins.formatting.gofmt,
+		nls.builtins.formatting.goimports,
+		nls.builtins.formatting.golines,
 		nls.builtins.formatting.prettier.with({
 			filetypes = { "markdown" },
 		}),
@@ -147,6 +155,7 @@ nls.setup({
 
 		nls.builtins.diagnostics.codespell,
 		nls.builtins.diagnostics.editorconfig_checker,
+		nls.builtins.diagnostics.golangci_lint,
 		nls.builtins.diagnostics.luacheck,
 		nls.builtins.diagnostics.shellcheck,
 		nls.builtins.diagnostics.zsh,

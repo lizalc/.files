@@ -14,6 +14,12 @@ local function lsp_clients()
 end
 
 require("lualine").setup({
+	extensions = {
+		"aerial",
+		"nvim-dap-ui",
+		"nvim-tree",
+		"quickfix",
+	},
 	options = {
 		globalstatus = true,
 	},

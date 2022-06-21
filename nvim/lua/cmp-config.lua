@@ -2,6 +2,12 @@ local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 
+local has_words_before = function()
+	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+	local line_range = vim.api.nvim_buf_get_lines(0, line - 1, line, true)
+	return col ~= 0 and line_range[1]:sub(col, col):match("%s") == nil
+end
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -23,16 +29,18 @@ cmp.setup({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = false,
 		}),
-		["<Tab>"] = function(fallback)
+		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
-			elseif luasnip.expand_or_jumpable() then
+			elseif luasnip.expand_or_locally_jumpable() then
 				luasnip.expand_or_jump()
+			elseif has_words_before() then
+				cmp.complete()
 			else
 				fallback()
 			end
-		end,
-		["<S-Tab>"] = function(fallback)
+		end, { "i", "s" }),
+		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
@@ -40,7 +48,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end,
+		end, { "i", "s" }),
 	},
 	formatting = {
 		format = lspkind.cmp_format({
@@ -61,19 +69,19 @@ cmp.setup({
 		}),
 	},
 	sources = cmp.config.sources({
-		{ name = "buffer" },
-		{ name = "luasnip" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "nvim_lsp_signature_help" },
+		{ name = "buffer" },
+		{ name = "luasnip" },
 		{
 			name = "spell",
 			keyword_length = 2,
 		},
-		{
-			name = "dictionary",
-			keyword_length = 2,
-		},
+		-- {
+		-- 	name = "dictionary",
+		-- 	keyword_length = 2,
+		-- },
 	}),
 })
 
