@@ -4010,7 +4010,7 @@
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>SolidUnderlines</key>
 	<true/>
 	<key>SoundForEsc</key>
