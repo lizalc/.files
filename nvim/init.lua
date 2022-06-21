@@ -159,8 +159,9 @@ if os.getenv("OS_NAME") == "Linux" then
 	vim.g.oscyank_silent = true
 end
 
-vim.api.nvim_set_keymap("n", "<C-.>", "<cmd>CodeActionMenu<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<C-.>", "<cmd>CodeActionMenu<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "i" }, "<C-.>", function()
+	vim.cmd([[CodeActionMenu]])
+end, { silent = true })
 
 local format = function()
 	vim.notify("Formatting...", vim.log.levels.INFO, { title = "Auto Format", timeout = 100 })
@@ -172,5 +173,9 @@ local save = function()
 	vim.cmd([[w]])
 end
 
-vim.api.nvim_set_keymap("n", "<C-s>", "<cmd>w<CR>", { noremap = true, silent = true, callback = save })
-vim.api.nvim_set_keymap("n", "<C-/>", "", { noremap = true, silent = true, callback = format })
+vim.keymap.set({ "n", "i" }, "<C-s>", save, { silent = true })
+vim.keymap.set({ "n", "i" }, "<C-/>", format, { silent = true })
+
+vim.keymap.set({ "n", "i" }, "<C-k>", function()
+	vim.cmd([[CommentToggle]])
+end)
