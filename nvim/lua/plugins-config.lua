@@ -46,6 +46,7 @@ packer.startup({
 		use("rcarriga/nvim-notify")
 		use("ojroques/vim-oscyank")
 		use("lukas-reineke/virt-column.nvim")
+		use("stevearc/dressing.nvim")
 
 		use({
 			"leoluz/nvim-dap-go",
@@ -233,8 +234,11 @@ packer.startup({
 		})
 
 		use({
-			"glepnir/dashboard-nvim",
-			requires = "nvim-telescope/telescope.nvim",
+			"goolord/alpha-nvim",
+			requires = "kyazdani42/nvim-web-devicons",
+			config = function()
+				require("alpha").setup(require("alpha.themes.theta").config)
+			end,
 		})
 
 		use({
