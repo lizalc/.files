@@ -4,7 +4,9 @@ if [[ $OS_NAME == "Linux" ]]; then
 	eval $(luarocks path)
 
 	export NPM_CONFIG_USERCONFIG="${HOME}/.config/npm/npmrc"
-	export PATH="${PATH}:/usr/lib/llvm/14/bin:${HOME}/.local/bin:${HOME}/.local/npm/bin:/home/liza/.cargo/bin"
+	export PATH="${PATH}:/usr/lib/llvm/14/bin:${HOME}/.local/bin:${HOME}/.local/npm/bin"
+
+	export CARGO_HOME="${HOME}/.local/cargo"
 
 	# Gentoo dotnet package does not install to the expected /usr/share/dotnet directory.
 	# Set the root manually based on current dotnet executable location.
