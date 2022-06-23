@@ -1,0 +1,6 @@
+jedi-language-server
+pipenv
+pre-commit
+pyre-check
+pyright
+python-lsp-server

@@ -1,0 +1,1 @@
+Should pre-commit hooks fail to find dependencies it may be necessary to navigate to the hook repo, somewhere in ~/.cache/pre-commit, then in the `node_env` dir symlink `lib` to `lib64`. `lib` is most likely empty and everything needed is in `lib64` but for some reason the hooks will check `lib` instead. Symlinking to `lib64` allows the hooks to properly resolve symlinks.
