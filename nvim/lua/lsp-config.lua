@@ -157,6 +157,7 @@ nls.setup({
 		nls.builtins.diagnostics.editorconfig_checker,
 		nls.builtins.diagnostics.golangci_lint,
 		nls.builtins.diagnostics.luacheck,
+		nls.builtins.diagnostics.staticcheck,
 		nls.builtins.diagnostics.zsh,
 	},
 })
