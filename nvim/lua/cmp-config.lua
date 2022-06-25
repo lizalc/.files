@@ -103,9 +103,12 @@ cmp.setup.cmdline(":", {
 require("cmp_git").setup()
 cmp.setup.filetype("gitcommit", {
 	sources = cmp.config.sources({
-		{ name = "buffer" },
-		{ name = "git" },
 		{ name = "luasnip" },
+		{ name = "git" },
+		{
+			name = "spell",
+			keyword_length = 2,
+		},
 	}),
 })
 
