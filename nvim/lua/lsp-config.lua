@@ -91,13 +91,15 @@ lsp_config.pyright.setup({
 	capabilities = capabilities,
 })
 
+lsp_config.solargraph.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 lsp_config.sumneko_lua.setup(require("lua-dev").setup({
 	lspconfig = {
 		on_attach = on_attach,
 		capabilities = capabilities,
-		cmd = {
-			vim.fn.glob("$HOME/.vscode*-insiders/extensions/sumneko.lua-*/server/bin/lua-language-server", nil, nil),
-		},
 		settings = {
 			Lua = {
 				runtime = {
