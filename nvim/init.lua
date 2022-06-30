@@ -147,7 +147,7 @@ vim.wo.colorcolumn = "90"
 
 -- using oscyank on macOS interferes with what I'm used too. Probably just need to
 -- tweak the config but for now only use it on WSL.
-if os.getenv("OS_NAME") == "WSL" then
+if vim.env.OS_NAME == "WSL" then
 	local function copy(lines, _)
 		vim.fn.OSCYankString(table.concat(lines, "\n"))
 	end

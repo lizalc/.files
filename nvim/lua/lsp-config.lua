@@ -73,7 +73,7 @@ lsp_config.omnisharp.setup({
 lsp_config.powershell_es.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	bundle_path = vim.fn.glob("$HOME/.vscode*-insiders/extensions/ms-vscode.powershell-preview-*/modules", nil, nil),
+	bundle_path = vim.env.HOME .. "/.local/powershell-es/",
 })
 
 lsp_config.pylsp.setup({
@@ -144,8 +144,8 @@ nls.setup({
 	update_in_insert = true,
 	sources = {
 		nls.builtins.formatting.gofmt,
-		nls.builtins.formatting.goimports,
-		nls.builtins.formatting.golines,
+		-- nls.builtins.formatting.goimports,
+		-- nls.builtins.formatting.golines,
 		nls.builtins.formatting.prettier.with({
 			filetypes = { "markdown" },
 		}),
