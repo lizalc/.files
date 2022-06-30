@@ -5,6 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if type brew &>/dev/null
+then
+	FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.local/oh-my-zsh"
 
