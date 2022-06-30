@@ -98,7 +98,9 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
 # pipx completion
 autoload -U bashcompinit && bashcompinit
-eval "$(register-python-argcomplete pipx)"
+if [[ $OS_NAME == "Darwin" ]]; then
+	eval "$(register-python-argcomplete pipx)"
+fi
 
 # To customize prompt, run `p10k configure` or edit .p10k.zsh.
 [[ ! -f ~/.files/powerlevel10k/.p10k.zsh ]] || source ~/.files/powerlevel10k/.p10k.zsh
