@@ -145,35 +145,6 @@ vim.cmd("highlight VirtColumn guifg=" .. default_colors.winterRed)
 
 vim.wo.colorcolumn = "90"
 
--- using oscyank on macOS interferes with what I'm used too. Probably just need to
--- tweak the config but for now only use it on WSL.
-if vim.env.OS_NAME == "WSL" then
-	local function copy(lines, _)
-		vim.fn.OSCYankString(table.concat(lines, "\n"))
-	end
-
-	local function paste()
-		return {
-			vim.fn.split(vim.fn.getreg("", nil, nil), "\n"),
-			vim.fn.getregtype(""),
-		}
-	end
-
-	vim.g.clipboard = {
-		name = "osc52",
-		copy = {
-			["+"] = copy,
-			["*"] = copy,
-		},
-		paste = {
-			["+"] = paste,
-			["*"] = paste,
-		},
-	}
-
-	vim.g.oscyank_silent = true
-end
-
 vim.keymap.set({ "n", "i" }, "<C-.>", function()
 	vim.cmd([[CodeActionMenu]])
 end, { silent = true })

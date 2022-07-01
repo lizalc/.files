@@ -44,7 +44,6 @@ packer.startup({
 		use("fladson/vim-kitty")
 		use("gentoo/gentoo-syntax")
 		use("rcarriga/nvim-notify")
-		use("ojroques/vim-oscyank")
 		use("lukas-reineke/virt-column.nvim")
 		use("stevearc/dressing.nvim")
 
