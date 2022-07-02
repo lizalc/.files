@@ -19,7 +19,7 @@ require("lualine-config")
 require("notify-config")
 require("telescope-config")
 
--- vim.o.cmdheight = "0"
+vim.o.cmdheight = "0"
 
 vim.opt.showmode = false
 vim.opt.spell = true
@@ -145,7 +145,7 @@ vim.cmd("highlight VirtColumn guifg=" .. default_colors.winterRed)
 
 vim.wo.colorcolumn = "90"
 
-vim.keymap.set({ "n", "i" }, "<C-.>", function()
+vim.keymap.set({ "n", "i" }, "<C-x>", function()
 	vim.cmd([[CodeActionMenu]])
 end, { silent = true })
 
@@ -160,7 +160,7 @@ local save = function()
 end
 
 vim.keymap.set({ "n", "i" }, "<C-s>", save, { silent = true })
-vim.keymap.set({ "n", "i" }, "<C-/>", format, { silent = true })
+vim.keymap.set({ "n", "i" }, "<C-i>", format, { silent = true })
 
 vim.keymap.set({ "n", "i" }, "<C-k>", function()
 	vim.cmd([[CommentToggle]])
