@@ -41,6 +41,7 @@ lsp_config.gopls.setup({
 lsp_config.jedi_language_server.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	autostart = false,
 })
 
 lsp_config.jsonnet_ls.setup({
@@ -89,6 +90,7 @@ lsp_config.pyre.setup({
 lsp_config.pyright.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	autostart = false,
 })
 
 lsp_config.solargraph.setup({
