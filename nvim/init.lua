@@ -21,6 +21,7 @@ require("telescope-config")
 
 vim.o.cmdheight = "0"
 
+vim.opt.updatetime = 175
 vim.opt.showmode = false
 vim.opt.spell = true
 vim.opt.spelllang = { "en_us" }
