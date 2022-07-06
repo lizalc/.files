@@ -58,10 +58,13 @@ end
 local lightbulb = "LightBulbSign"
 vim.fn.sign_define(lightbulb, { text = signs["Hint"], texthl = lightbulb, linehl = lightbulb, numhl = lightbulb })
 
-require("nvim-lightbulb").setup({
-	autocmd = {
-		enabled = true,
+require("lspsaga").init_lsp_saga({
+	border_style = "rounded",
+	code_action_icon = signs["Hint"],
+	code_action_lightbulb = {
+		virtual_text = false,
 	},
+	diagnostic_header = signs,
 })
 
 require("trouble").setup()
@@ -147,7 +150,7 @@ vim.cmd("highlight VirtColumn guifg=" .. default_colors.winterRed)
 vim.wo.colorcolumn = "90"
 
 vim.keymap.set({ "n", "i" }, "<C-x>", function()
-	vim.cmd([[CodeActionMenu]])
+	vim.cmd([[Lspsaga code_action]])
 end, { silent = true })
 
 local format = function()
@@ -161,8 +164,4 @@ local save = function()
 end
 
 vim.keymap.set({ "n", "i" }, "<C-s>", save, { silent = true })
-vim.keymap.set({ "n", "i" }, "<C-i>", format, { silent = true })
-
-vim.keymap.set({ "n", "i" }, "<C-k>", function()
-	vim.cmd([[CommentToggle]])
-end)
+vim.keymap.set({ "n", "i" }, "<C-k>", format, { silent = true })

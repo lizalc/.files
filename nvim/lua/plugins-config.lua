@@ -110,8 +110,6 @@ packer.startup({
 			},
 		})
 
-		use("kosayoda/nvim-lightbulb")
-
 		use({
 			"folke/trouble.nvim",
 			requires = "kyazdani42/nvim-web-devicons",
@@ -240,11 +238,6 @@ packer.startup({
 			end,
 		})
 
-		use({
-			"weilbith/nvim-code-action-menu",
-			cmd = "CodeActionMenu",
-		})
-
 		use("google/vim-jsonnet")
 		use("editorconfig/editorconfig-vim")
 
@@ -287,6 +280,8 @@ packer.startup({
 				})
 			end,
 		})
+
+		use({ "glepnir/lspsaga.nvim" })
 
 		if packer_bootstrap then
 			packer.sync()
