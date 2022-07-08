@@ -5,8 +5,6 @@
 -- * Match cursor to terminal settings otherwise Neovim overwrites them >:(
 -- * Enable mouse support
 
--- opt in to: https://old.reddit.com/r/neovim/comments/rvwsl3/introducing_filetypelua_and_a_call_for_help/
-vim.g.do_filetype_lua = 1
 vim.opt.termguicolors = true
 
 require("plugins-config")
