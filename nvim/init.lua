@@ -165,3 +165,5 @@ end
 
 vim.keymap.set({ "n", "i" }, "<C-s>", save, { silent = true })
 vim.keymap.set({ "n", "i" }, "<C-k>", format, { silent = true })
+vim.keymap.set({ "n", "i" }, "<C-c>", require("lspsaga.hover").render_hover_doc, { silent = true })
+vim.keymap.set("n", "<C-Space>", require("lspsaga.floaterm").open_float_terminal, { silent = true })

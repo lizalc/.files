@@ -146,8 +146,8 @@ nls.setup({
 	update_in_insert = true,
 	sources = {
 		nls.builtins.formatting.gofmt,
-		-- nls.builtins.formatting.goimports,
-		-- nls.builtins.formatting.golines,
+		nls.builtins.formatting.goimports,
+		nls.builtins.formatting.golines,
 		nls.builtins.formatting.prettier.with({
 			filetypes = { "markdown" },
 		}),
@@ -157,7 +157,7 @@ nls.setup({
 		nls.builtins.code_actions.proselint,
 		nls.builtins.code_actions.shellcheck,
 
-		nls.builtins.diagnostics.codespell,
+		-- nls.builtins.diagnostics.codespell,
 		nls.builtins.diagnostics.editorconfig_checker,
 		nls.builtins.diagnostics.golangci_lint,
 		nls.builtins.diagnostics.luacheck,

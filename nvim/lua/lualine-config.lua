@@ -2,8 +2,17 @@ local function lsp_clients()
 	local clients = {}
 	local has_clients = false
 	for _, client in pairs(vim.lsp.get_active_clients()) do
-		table.insert(clients, client.name)
-		has_clients = true
+		local present = false
+		for _, name in pairs(clients) do
+			if name == client.name then
+				present = true
+			end
+		end
+
+		if not present then
+			table.insert(clients, client.name)
+			has_clients = true
+		end
 	end
 
 	if has_clients then

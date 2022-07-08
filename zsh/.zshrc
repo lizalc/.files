@@ -35,6 +35,7 @@ plugins=(
 	colored-man-pages
 	colorize
 	command-not-found
+	docker
 	dotenv
 	dotnet
 	gem
