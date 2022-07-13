@@ -6,6 +6,7 @@
 -- * Enable mouse support
 
 vim.opt.termguicolors = true
+vim.g.mapleader = ";"
 
 require("plugins-config")
 require("treesitter-config")
@@ -147,9 +148,9 @@ vim.cmd("highlight VirtColumn guifg=" .. default_colors.winterRed)
 
 vim.wo.colorcolumn = "90"
 
-vim.keymap.set({ "n", "i" }, "<C-x>", function()
+vim.keymap.set({ "n" }, "<leader>x", function()
 	vim.cmd([[Lspsaga code_action]])
-end, { silent = true })
+end, { silent = true, desc = "Open Lspsaga code action menu" })
 
 local format = function()
 	vim.notify("Formatting...", vim.log.levels.INFO, { title = "Auto Format", timeout = 100 })
@@ -161,7 +162,25 @@ local save = function()
 	vim.cmd([[w]])
 end
 
-vim.keymap.set({ "n", "i" }, "<C-s>", save, { silent = true })
-vim.keymap.set({ "n", "i" }, "<C-k>", format, { silent = true })
-vim.keymap.set({ "n", "i" }, "<C-c>", require("lspsaga.hover").render_hover_doc, { silent = true })
-vim.keymap.set("n", "<C-Space>", require("lspsaga.floaterm").open_float_terminal, { silent = true })
+vim.keymap.set({ "n" }, "<leader>s", save, { silent = true, desc = "Save buffer" })
+vim.keymap.set({ "n" }, "<leader>k", format, { silent = true, desc = "Format buffer" })
+vim.keymap.set(
+	{ "n" },
+	"<leader>c",
+	require("lspsaga.hover").render_hover_doc,
+	{ silent = true, desc = "Show Lspsaga hover doc" }
+)
+vim.keymap.set(
+	"n",
+	"<leader><leader>",
+	require("lspsaga.floaterm").open_float_terminal,
+	{ silent = true, desc = "Open Lspsaga floating terminal" }
+)
+
+local virt_lines_toggle = false
+vim.keymap.set("n", "<leader>h", function()
+	virt_lines_toggle = not virt_lines_toggle
+	vim.diagnostic.config({ virtual_lines = virt_lines_toggle })
+end, { silent = true, desc = "Toggle lsp_lines virtual line diagnostics" })
+
+vim.keymap.set("n", "<leader>q", "<Cmd>q<CR>", { silent = true, desc = "Quit" })
