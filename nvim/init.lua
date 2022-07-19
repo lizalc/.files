@@ -137,6 +137,7 @@ vim.wo.cursorlineopt = "number"
 local default_colors = require("kanagawa.colors").setup()
 
 require("kanagawa").setup({
+	globalStatus = true,
 	transparent = true,
 	overrides = {
 		CursorLineNr = { fg = default_colors.oldWhite },
