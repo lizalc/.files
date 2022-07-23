@@ -178,10 +178,8 @@ vim.keymap.set(
 	{ silent = true, desc = "Open Lspsaga floating terminal" }
 )
 
-local virt_lines_toggle = false
 vim.keymap.set("n", "<leader>h", function()
-	virt_lines_toggle = not virt_lines_toggle
-	vim.diagnostic.config({ virtual_lines = virt_lines_toggle })
+	require("lsp_lines").toggle()
 end, { silent = true, desc = "Toggle lsp_lines virtual line diagnostics" })
 
 vim.keymap.set("n", "<leader>q", "<Cmd>q<CR>", { silent = true, desc = "Quit" })

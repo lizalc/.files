@@ -267,8 +267,9 @@ packer.startup({
 			"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 			as = "lsp_lines",
 			config = function()
-				require("lsp_lines").register_lsp_virtual_lines()
-				vim.diagnostic.config({ virtual_lines = false })
+				local lsplines = require("lsp_lines")
+				lsplines.setup()
+				lsplines.toggle()
 			end,
 		})
 
