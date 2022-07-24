@@ -143,14 +143,14 @@ require("kanagawa").setup({
 		CursorLineNr = { fg = default_colors.oldWhite },
 	},
 })
-vim.cmd([[colorscheme kanagawa]])
-vim.cmd([[highlight ColorColumn ctermbg=none guibg=none]])
-vim.cmd("highlight VirtColumn guifg=" .. default_colors.winterRed)
+vim.cmd.colorscheme("kanagawa")
+vim.cmd.highlight("ColorColumn", "ctermbg=none", "guibg=none")
+vim.cmd.highlight("VirtColumn", "guifg=" .. default_colors.winterRed)
 
 vim.wo.colorcolumn = "90"
 
 vim.keymap.set({ "n" }, "<leader>x", function()
-	vim.cmd([[Lspsaga code_action]])
+	require("lspsaga.codeaction").code_action()
 end, { silent = true, desc = "Open Lspsaga code action menu" })
 
 local format = function()
@@ -160,7 +160,7 @@ end
 
 local save = function()
 	vim.notify("Saving current buffer", vim.log.levels.INFO, { timeout = 100 })
-	vim.cmd([[w]])
+	vim.cmd.write()
 end
 
 vim.keymap.set({ "n" }, "<leader>s", save, { silent = true, desc = "Save buffer" })

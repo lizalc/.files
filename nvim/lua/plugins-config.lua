@@ -13,7 +13,7 @@ if fn.empty(fn.glob(install_path, nil, nil)) > 0 then
 		"https://github.com/wbthomason/packer.nvim",
 		install_path,
 	})
-	vim.cmd([[packadd packer.nvim]])
+	vim.cmd.packadd("packer.nvim")
 end
 
 local packer = require("packer")

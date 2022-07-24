@@ -41,4 +41,4 @@ require("nvim-treesitter.configs").setup({
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = [[nvim_treesitter#foldexpr()]]
 -- Open files unfolded by default
-vim.cmd("set nofoldenable")
+vim.wo.foldenable = false
