@@ -134,16 +134,18 @@ vim.g.tokyonight_lualine_bold = true
 vim.wo.cursorline = true
 vim.wo.cursorlineopt = "number"
 
+vim.cmd.colorscheme("oxocarbon")
+
 local default_colors = require("kanagawa.colors").setup()
 
-require("kanagawa").setup({
-	globalStatus = true,
-	transparent = true,
-	overrides = {
-		CursorLineNr = { fg = default_colors.oldWhite },
-	},
-})
-vim.cmd.colorscheme("kanagawa")
+-- require("kanagawa").setup({
+-- 	globalStatus = true,
+-- 	transparent = true,
+-- 	overrides = {
+-- 		CursorLineNr = { fg = default_colors.oldWhite },
+-- 	},
+-- })
+-- vim.cmd.colorscheme("kanagawa")
 vim.cmd.highlight("ColorColumn", "ctermbg=none", "guibg=none")
 vim.cmd.highlight("VirtColumn", "guifg=" .. default_colors.winterRed)
 

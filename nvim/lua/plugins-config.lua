@@ -41,6 +41,11 @@ packer.startup({
 		use("folke/tokyonight.nvim")
 		use("projekt0n/github-nvim-theme")
 		use("rebelot/kanagawa.nvim")
+		use({
+			"shaunsingh/oxocarbon.nvim",
+			run = "./install.sh",
+		})
+
 		use("fladson/vim-kitty")
 		use("gentoo/gentoo-syntax")
 		use("rcarriga/nvim-notify")

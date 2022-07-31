@@ -2,7 +2,7 @@ local default_colors = require("kanagawa.colors").setup()
 
 vim.notify = require("notify")
 vim.notify.setup({
-	background_colour = default_colors.oldWhite,
+	-- background_colour = default_colors.oldWhite,
 })
 
 local client_notifs = {}
