@@ -54,13 +54,13 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 if [[ $OS_NAME == "Linux" ]]; then
+	alias code-insiders="code-insiders --ozone-platform-hint=auto"
+
 	# This really shouldn't be needed but something is causing git to
 	# not be able to tab complete custom subcommands. It works in some
 	# environments but not others.
 	# Pulled from: https://stackoverflow.com/questions/38725102/how-to-add-custom-git-command-to-zsh-completion
-	zstyle ':completion:*:*:git:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
-
-	alias open="cmd.exe /c \"${1}\""
+	# zstyle ':completion:*:*:git:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
 elif [[ $OS_NAME == "Darwin" ]]; then
 	# iTerm2 Integration
 	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -75,6 +75,7 @@ elif [[ $OS_NAME == "Darwin" ]]; then
 fi
 
 # User configuration
+
 
 # For zsh-completions
 autoload -U compinit && compinit
