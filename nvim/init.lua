@@ -113,6 +113,8 @@ require("gitsigns").setup({
 	},
 })
 
+require("go").setup()
+
 vim.opt.timeoutlen = 50
 require("which-key").setup()
 

@@ -65,6 +65,11 @@ packer.startup({
 		})
 
 		use({
+			"ray-x/go.nvim",
+			requires = "ray-x/guihua.lua",
+		})
+
+		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
 		})
