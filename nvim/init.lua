@@ -69,7 +69,6 @@ require("lspsaga").init_lsp_saga({
 require("trouble").setup()
 require("luasnip.loaders.from_vscode").load()
 require("treesitter-context").setup()
-require("spellsitter").setup()
 require("twilight").setup()
 require("nvim-tree").setup()
 require("neogit").setup()
