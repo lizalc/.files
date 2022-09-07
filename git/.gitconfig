@@ -10,7 +10,7 @@
 [mergetool]
 	keepBackup = false
 [mergetool "vscode"]
-	cmd = code-insiders --wait $MERGED
+	cmd = code-insiders --ozone-platform-hint=auto --wait $MERGED
 [commit]
 	verbose = true
 [fetch]
