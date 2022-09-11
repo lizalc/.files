@@ -5,30 +5,63 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if type brew &>/dev/null
-then
-	FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# To customize prompt, run `p10k configure` or edit .p10k.zsh.
+[[ ! -f ~/.files/powerlevel10k/.p10k.zsh ]] || source ~/.files/powerlevel10k/.p10k.zsh
+
+# This sets up Homebrew/etc so should be sourced before doing anything else.
+if [[ $OS_NAME == "Darwin" ]]; then
+	source ${HOME}/.files/zsh/macos.zshrc
 fi
+
+# This really shouldn't be needed but something is causing git to
+# not be able to tab complete custom subcommands. It works in some
+# environments but not others.
+# Pulled from: https://stackoverflow.com/questions/38725102/how-to-add-custom-git-command-to-zsh-completion
+# zstyle ':completion:*:*:git:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
+
+# From https://wiki.gentoo.org/wiki/Zsh/Guide
+# Enhance tab completion
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+# Completion cache (from https://wiki.gentoo.org/wiki/Zsh/Guide)
+zstyle ':completion::complete:*' use-cache 1
+
+# Use LS_COLORS in tab completion output
+zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
+
+# pipx completion
+if (( $+commands[pipx] )); then
+	autoload -U bashcompinit && bashcompinit
+	eval "$(register-python-argcomplete pipx)"
+fi
+
+# pipenv completion
+if (( $+commands[pipenv] )); then
+	eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+fi
+
+# luarocks setup
+if (( $+commands[luarocks] )); then
+	eval $(luarocks path)
+fi
+
+# Gentoo dotnet package does not install to the expected /usr/share/dotnet directory.
+# Set the root manually based on current dotnet executable location.
+# export DOTNET_ROOT="$(dirname $(readlink -f $(which dotnet)))"
+
+# Alias 'vim' to neovim ('nvim')
+alias vim="nvim"
+
+# bin / obj cleanup shortcut
+alias rmbin="rm -rvf **/bin"
+alias rmobj="rm -rvf **/obj"
+alias rmall="rm -rvf **/bin **/obj"
 
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.local/oh-my-zsh"
-
-# Set name of the theme to load
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	autoupdate
@@ -50,59 +83,5 @@ plugins=(
 	zsh-completions
 	zsh-syntax-highlighting
 )
-
+# Source oh-my-zsh last as it sets up ZSH completion
 source $ZSH/oh-my-zsh.sh
-
-if [[ $OS_NAME == "Linux" ]]; then
-	alias code-insiders="code-insiders --ozone-platform-hint=auto"
-
-	# This really shouldn't be needed but something is causing git to
-	# not be able to tab complete custom subcommands. It works in some
-	# environments but not others.
-	# Pulled from: https://stackoverflow.com/questions/38725102/how-to-add-custom-git-command-to-zsh-completion
-	# zstyle ':completion:*:*:git:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
-elif [[ $OS_NAME == "Darwin" ]]; then
-	# iTerm2 Integration
-	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-	alias ls="gls --color=auto"
-
-	# Alias 'sed' to GNU version
-	alias sed='gsed'
-
-	# Make python modern
-	alias python="python3"
-fi
-
-# User configuration
-
-
-# For zsh-completions
-autoload -U compinit && compinit
-
-# pipenv
-eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
-
-# Enhance tab completion (from https://wiki.gentoo.org/wiki/Zsh/Guide)
-zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
-
-# pipx completion
-autoload -U bashcompinit && bashcompinit
-eval "$(register-python-argcomplete pipx)"
-
-# To customize prompt, run `p10k configure` or edit .p10k.zsh.
-[[ ! -f ~/.files/powerlevel10k/.p10k.zsh ]] || source ~/.files/powerlevel10k/.p10k.zsh
-
-zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
-
-# Completion cache (from https://wiki.gentoo.org/wiki/Zsh/Guide)
-zstyle ':completion::complete:*' use-cache 1
-
-# Alias 'vim' to neovim ('nvim')
-alias vim="nvim"
-
-# bin / obj cleanup shortcut
-alias rmbin="rm -rvf **/bin"
-alias rmobj="rm -rvf **/obj"
-alias rmall="rm -rvf **/bin **/obj"
