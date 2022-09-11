@@ -1,0 +1,16 @@
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=false
+background-color='rgb(1,22,39)'
+background-transparency-percent=5
+cursor-blink-mode='system'
+cursor-colors-set=false
+cursor-shape='underline'
+font='CaskaydiaCove Nerd Font Mono 12'
+foreground-color='rgb(214,222,235)'
+palette=['rgb(1,22,39)', 'rgb(239,83,80)', 'rgb(34,218,110)', 'rgb(173,219,103)', 'rgb(130,170,255)', 'rgb(199,146,234)', 'rgb(33,199,168)', 'rgb(255,255,255)', 'rgb(87,86,86)', 'rgb(239,83,80)', 'rgb(34,218,110)', 'rgb(255,235,149)', 'rgb(130,170,255)', 'rgb(199,146,234)', 'rgb(127,219,202)', 'rgb(255,255,255)']
+scrollback-unlimited=true
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+use-transparent-background=true
+visible-name='Night Owl'

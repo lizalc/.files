@@ -1,0 +1,28 @@
+{
+  "name": "Night Owl",
+  "comment": "Night Owl by Sarah Drasner",
+  "foreground-color": "#d6deeb",
+  "background-color": "#011627CC",
+  "use-theme-colors": true,
+  "use-highlight-color": false,
+  "use-cursor-color": false,
+  "use-badge-color": false,
+  "palette": [
+    "#011627",
+    "#ef5350",
+    "#22da6e",
+    "#addb67",
+    "#82aaff",
+    "#c792ea",
+    "#21c7a8",
+    "#ffffff",
+    "#575656",
+    "#ef5350",
+    "#22da6e",
+    "#ffeb95",
+    "#82aaff",
+    "#c792ea",
+    "#7fdbca",
+    "#ffffff"
+  ]
+}
