@@ -215,17 +215,17 @@
   # Current directory background color.
   typeset -g POWERLEVEL9K_DIR_BACKGROUND=24 # Or 23
   # Default current directory foreground color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=250
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=142
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=233
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=246
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=250
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=178
   # Display anchor directory segments in bold.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
   # Don't shorten directories that contain any of these files. They are anchors.
@@ -355,7 +355,7 @@
   typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=35
   typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=142
   typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=130
-  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=167
+  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=124
   typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=24 # match dir background
 
   # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.
@@ -384,11 +384,11 @@
     fi
 
     # Styling for different parts of Git status.
-    local       meta='%7F' # white foreground
-    local      clean='%0F' # black foreground
-    local   modified='%0F' # black foreground
-    local  untracked='%0F' # black foreground
-    local conflicted='%1F' # red foreground
+    local       meta='%242F' # white foreground
+    local      clean='%236F' # black foreground
+    local   modified='%236F' # black foreground
+    local  untracked='%236F' # black foreground
+    local conflicted='%230F' # red foreground
 
     local res
 
@@ -511,8 +511,8 @@
   # like this: 1|0.
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE=true
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE_VISUAL_IDENTIFIER_EXPANSION='✔'
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=2
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=0
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=236
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=35
 
   # Status when it's just an error code (e.g., '1'). No need to show it if prompt_char is enabled as
   # it will signify error by turning red.
@@ -526,20 +526,20 @@
   # Use terse signal names: "INT" instead of "SIGINT(2)".
   typeset -g POWERLEVEL9K_STATUS_VERBOSE_SIGNAME=false
   typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_VISUAL_IDENTIFIER_EXPANSION='✘'
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND=3
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_BACKGROUND=1
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND=230
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_BACKGROUND=124
 
   # Status when some part of a pipe command fails and the overall exit status is also non-zero.
   # It may look like this: 1|0.
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE=true
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_VISUAL_IDENTIFIER_EXPANSION='✘'
-  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=3
-  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_BACKGROUND=1
+  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=230
+  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_BACKGROUND=124
 
   ###################[ command_execution_time: duration of the last command ]###################
   # Execution time color.
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=0
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=3
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=236
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND=142
   # Show duration of the last command if takes at least this many seconds.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
   # Show this many fractional digits. Zero means round to seconds.
@@ -562,10 +562,10 @@
 
   #######################[ direnv: direnv status (https://direnv.net/) ]########################
   # Direnv color.
-  typeset -g POWERLEVEL9K_DIRENV_FOREGROUND=3
-  typeset -g POWERLEVEL9K_DIRENV_BACKGROUND=0
+  typeset -g POWERLEVEL9K_DIRENV_FOREGROUND=236
+  typeset -g POWERLEVEL9K_DIRENV_BACKGROUND=130
   # Custom icon.
-  # typeset -g POWERLEVEL9K_DIRENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_DIRENV_VISUAL_IDENTIFIER_EXPANSION='אּ'
 
   ###############[ asdf: asdf version manager (https://github.com/asdf-vm/asdf) ]###############
   # Default asdf color. Only used to display tools for which there is no color override (see below).
@@ -904,14 +904,14 @@
 
   ##################################[ context: user@hostname ]##################################
   # Context color when running with privileges.
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=1
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND=0
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=230
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND=124
   # Context color in SSH without privileges.
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=3
-  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=0
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=236
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=35
   # Default context color (no privileges, no SSH).
-  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=3
-  typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=0
+  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=236
+  typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=35
 
   # Context format when running with privileges: user@hostname.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE='%n@%m'
