@@ -25,7 +25,6 @@ plugins=(
 	colorize
 	command-not-found
 	docker
-	dotenv
 	dotnet
 	gem
 	git
@@ -71,7 +70,12 @@ fi
 
 # luarocks setup
 if (( $+commands[luarocks] )); then
-	eval $(luarocks path)
+	eval "$(luarocks path)"
+fi
+
+# direnv setup
+if (( $+commands[direnv] )); then
+	eval "$(direnv hook zsh)"
 fi
 
 # Gentoo dotnet package does not install to the expected /usr/share/dotnet directory.
