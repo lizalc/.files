@@ -13,50 +13,6 @@ if [[ $OS_NAME == "Darwin" ]]; then
 	source ${HOME}/.files/zsh/macos.zshrc
 fi
 
-# This really shouldn't be needed but something is causing git to
-# not be able to tab complete custom subcommands. It works in some
-# environments but not others.
-# Pulled from: https://stackoverflow.com/questions/38725102/how-to-add-custom-git-command-to-zsh-completion
-# zstyle ':completion:*:*:git:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
-
-# From https://wiki.gentoo.org/wiki/Zsh/Guide
-# Enhance tab completion
-zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
-# Completion cache (from https://wiki.gentoo.org/wiki/Zsh/Guide)
-zstyle ':completion::complete:*' use-cache 1
-
-# Use LS_COLORS in tab completion output
-zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
-
-# pipx completion
-if (( $+commands[pipx] )); then
-	autoload -U bashcompinit && bashcompinit
-	eval "$(register-python-argcomplete pipx)"
-fi
-
-# pipenv completion
-if (( $+commands[pipenv] )); then
-	eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
-fi
-
-# luarocks setup
-if (( $+commands[luarocks] )); then
-	eval $(luarocks path)
-fi
-
-# Gentoo dotnet package does not install to the expected /usr/share/dotnet directory.
-# Set the root manually based on current dotnet executable location.
-# export DOTNET_ROOT="$(dirname $(readlink -f $(which dotnet)))"
-
-# Alias 'vim' to neovim ('nvim')
-alias vim="nvim"
-
-# bin / obj cleanup shortcut
-alias rmbin="rm -rvf **/bin"
-alias rmobj="rm -rvf **/obj"
-alias rmall="rm -rvf **/bin **/obj"
-
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.local/oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -83,5 +39,49 @@ plugins=(
 	zsh-completions
 	zsh-syntax-highlighting
 )
-# Source oh-my-zsh last as it sets up ZSH completion
+# Source before modifying ZSH completions as oh-my-zsh sets it up.
 source $ZSH/oh-my-zsh.sh
+
+# This really shouldn't be needed but something is causing git to
+# not be able to tab complete custom subcommands. It works in some
+# environments but not others.
+# Pulled from: https://stackoverflow.com/questions/38725102/how-to-add-custom-git-command-to-zsh-completion
+# zstyle ':completion:*:*:git:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
+
+# From https://wiki.gentoo.org/wiki/Zsh/Guide
+# Enhance tab completion
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+# Completion cache (from https://wiki.gentoo.org/wiki/Zsh/Guide)
+zstyle ':completion::complete:*' use-cache 1
+
+# Use LS_COLORS in tab completion output
+zstyle ':completion:*:default' list-colors "${(s.:.)LS_COLORS}"
+
+# pipx completion
+if (( $+commands[pipx] )); then
+	autoload -Uz bashcompinit && bashcompinit
+	eval "$(register-python-argcomplete pipx)"
+fi
+
+# pipenv completion
+if (( $+commands[pipenv] )); then
+	eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+fi
+
+# luarocks setup
+if (( $+commands[luarocks] )); then
+	eval $(luarocks path)
+fi
+
+# Gentoo dotnet package does not install to the expected /usr/share/dotnet directory.
+# Set the root manually based on current dotnet executable location.
+# export DOTNET_ROOT="$(dirname $(readlink -f $(which dotnet)))"
+
+# Alias 'vim' to neovim ('nvim')
+alias vim="nvim"
+
+# bin / obj cleanup shortcut
+alias rmbin="rm -rvf **/bin"
+alias rmobj="rm -rvf **/obj"
+alias rmall="rm -rvf **/bin **/obj"
