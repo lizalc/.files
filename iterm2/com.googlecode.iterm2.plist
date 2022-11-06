@@ -2237,7 +2237,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>CaskaydiaCoveNerdFontComplete-Regular 13.7</string>
+			<string>CaskaydiaCoveNerdFontComplete-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -2295,7 +2295,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>4</integer>
+			<integer>1</integer>
 			<key>Transparency</key>
 			<real>0.050000000000000003</real>
 			<key>Unicode Normalization</key>
@@ -2315,7 +2315,7 @@
 			<key>Use libtickit protocol</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.01</real>
+			<real>1</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -2376,7 +2376,7 @@
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>SolidUnderlines</key>
 	<true/>
 	<key>SoundForEsc</key>

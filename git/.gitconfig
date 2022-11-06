@@ -15,6 +15,7 @@
 	verbose = true
 [fetch]
 	prune = true
+	showForcedUpdates = true
 [core]
 	autocrlf = input
 	pager = less -F
@@ -27,6 +28,7 @@
 [rebase]
 	autoStash = true
 	autoSquash = true
+	updateRefs = true
 [checkout]
 	defaultRemote = origin
 [pull]
@@ -42,3 +44,12 @@
 	path = ~/.files/git/.wsl.gitconfig
 [includeIf "gitdir/i:**/work/**"]
 	path = ~/.files/git/.work.gitconfig
+[scalar]
+	repo = /Users/liza/Programming/work/firmware-monorepo
+[maintenance]
+	repo = /Users/liza/Programming/work/firmware-monorepo
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
