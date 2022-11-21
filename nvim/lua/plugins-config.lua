@@ -258,7 +258,7 @@ packer.startup({
 			end,
 		})
 
-		use("folke/lua-dev.nvim")
+		use("folke/neodev.nvim")
 
 		use({
 			"terrortylor/nvim-comment",
