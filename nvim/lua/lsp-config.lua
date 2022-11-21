@@ -12,16 +12,13 @@ local on_attach = function(client, bufnr)
 	end
 
 	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-
-	_aerial.on_attach(client, bufnr)
 end
 
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lsp_config.bashls.setup({
 	on_attach = on_attach,
