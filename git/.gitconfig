@@ -1,6 +1,7 @@
 [user]
 	name = Liza Chevalier
 	email = lizalc@pm.me
+	signingkey = DED1082704070A10!
 [help]
 	autocorrect = 1
 [diff]
@@ -13,6 +14,7 @@
 	cmd = code-insiders --ozone-platform-hint=auto --wait $MERGED
 [commit]
 	verbose = true
+	gpgsign = true
 [fetch]
 	prune = true
 [core]

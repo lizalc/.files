@@ -6,6 +6,9 @@ user_config="${HOME}/.config"
 user_cache="${HOME}/.cache"
 
 export GOBIN="${user_bin}"
+
+export GNUPGHOME="${user_config}/gnupg"
+
 export GOCACHE="${user_cache}/go/go-build"
 export GOENV="${user_config}/go/env"
 export GOMODCACHE="${user_cache}/go/pkg/mod"
