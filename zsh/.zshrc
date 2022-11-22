@@ -27,6 +27,7 @@ plugins=(
 	docker
 	dotnet
 	gem
+	gh
 	git
 	gitignore
 	golang
@@ -34,6 +35,7 @@ plugins=(
 	npm
 	pip
 	pipenv
+	rust
 	zsh-autosuggestions
 	zsh-completions
 	zsh-syntax-highlighting
@@ -45,7 +47,7 @@ source $ZSH/oh-my-zsh.sh
 # not be able to tab complete custom subcommands. It works in some
 # environments but not others.
 # Pulled from: https://stackoverflow.com/questions/38725102/how-to-add-custom-git-command-to-zsh-completion
-# zstyle ':completion:*:*:git:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
+zstyle ':completion:*:*:git:*' user-commands ${${(M)${(k)commands}:#git-*}/git-/}
 
 # From https://wiki.gentoo.org/wiki/Zsh/Guide
 # Enhance tab completion
@@ -84,6 +86,10 @@ fi
 
 # Alias 'vim' to neovim ('nvim')
 alias vim="nvim"
+
+# bat is nice
+alias cat="bat"
+alias gcat="/usr/bin/cat"
 
 # bin / obj cleanup shortcut
 alias rmbin="rm -rvf **/bin"
