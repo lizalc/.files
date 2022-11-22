@@ -11,12 +11,13 @@
 [mergetool]
 	keepBackup = false
 [mergetool "vscode"]
-	cmd = code-insiders --ozone-platform-hint=auto --wait $MERGED
+	cmd = code-insiders --wait $MERGED
 [commit]
 	verbose = true
 	gpgsign = true
 [fetch]
 	prune = true
+	showForcedUpdates = true
 [core]
 	autocrlf = input
 	pager = less -F
@@ -44,3 +45,8 @@
 	path = ~/.files/git/.wsl.gitconfig
 [includeIf "gitdir/i:**/work/**"]
 	path = ~/.files/git/.work.gitconfig
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
