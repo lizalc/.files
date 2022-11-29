@@ -49,7 +49,7 @@
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Windows PowerShell"
             },
             {
@@ -77,18 +77,16 @@
                 "source": "Git"
             },
             {
-                "adjustIndistinguishableColors": "indexed",
-                "guid": "{8c701c6d-1341-546d-84ae-1a1fb3a809ed}",
-                "hidden": false,
-                "intenseTextStyle": "bright",
-                "name": "Ubuntu (Preview)",
-                "source": "CanonicalGroupLimited.UbuntuPreview_79rhkp1fndgsc"
+                "guid": "{380f2e23-d873-5582-8311-35d57d3af302}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{491fa895-2dca-5d90-ba62-3da4b59cffe2}",
-                "hidden": true,
-                "name": "Ubuntu-Preview",
-                "source": "Windows.Terminal.Wsl"
+                "guid": "{13c1011c-df88-5d59-a9fa-ea70c8ab6d02}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
