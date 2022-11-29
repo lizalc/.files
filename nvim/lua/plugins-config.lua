@@ -235,6 +235,13 @@ packer.startup({
 		})
 
 		use({
+			"nvim-zh/colorful-winsep.nvim",
+			config = function()
+				require("colorful-winsep").setup()
+			end,
+		})
+
+		use({
 			"goolord/alpha-nvim",
 			requires = "kyazdani42/nvim-web-devicons",
 			config = function()
