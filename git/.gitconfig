@@ -41,7 +41,7 @@
 [color "diff-highlight"]
 	oldHighlight = ul
 	oldReset = noul
-[includeIf "gitdir/i:/mnt/c/**"]
+[includeIf "gitdir/i:%(prefix)//mnt/c/**"]
 	path = ~/.files/git/.wsl.gitconfig
 [includeIf "gitdir/i:**/work/**"]
 	path = ~/.files/git/.work.gitconfig
