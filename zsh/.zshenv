@@ -5,8 +5,6 @@ user_bin="${user_local}/bin"
 user_config="${HOME}/.config"
 user_cache="${HOME}/.cache"
 
-export DOTNET_ROOT="${user_local}/dotnet"
-
 export GNUPGHOME="${user_config}/gnupg"
 
 export GOCACHE="${user_cache}/go/go-build"
@@ -21,6 +19,6 @@ export CARGO_HOME="${user_local}/cargo"
 export NPM_CONFIG_USERCONFIG="${user_config}/npm/npmrc"
 export NPM_GLOBAL_BIN="${user_local}/npm/bin"
 
-export PATH="${PATH}:${user_bin}:${GOBIN}:${NPM_GLOBAL_BIN}:${DOTNET_ROOT}:${DOTNET_ROOT}/tools"
+export PATH="${PATH}:${user_bin}:${GOBIN}:${NPM_GLOBAL_BIN}:${HOME}/.dotnet/tools"
 
 source "${user_local}/cargo/env"
