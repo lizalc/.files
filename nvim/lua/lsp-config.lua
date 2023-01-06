@@ -61,10 +61,11 @@ lsp_config.omnisharp.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	cmd = {
-		"OmniSharp",
-		"--languageserver",
-		"--hostPID",
-		tostring(vim.fn.getpid()),
+		"dotnet",
+		vim.fn.globpath(
+			vim.env.HOME,
+			".vscode-insiders/extensions/ms-dotnettools.csharp-*/.omnisharp/*-*/OmniSharp.dll"
+		),
 	},
 })
 
@@ -134,6 +135,10 @@ nls.setup({
 		nls.builtins.formatting.goimports,
 		nls.builtins.formatting.golines,
 		nls.builtins.formatting.prettier.with({
+			command = vim.fn.globpath(
+				vim.env.HOME,
+				".vscode-insiders/extensions/esbenp.prettier-vscode-*/node_modules/prettier/bin-prettier.js"
+			),
 			filetypes = { "markdown" },
 		}),
 		nls.builtins.formatting.stylua,

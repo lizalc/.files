@@ -130,13 +130,15 @@ vim.g.tokyonight_italic_functions = true
 vim.g.tokyonight_italic_variables = false
 vim.g.tokyonight_transparent = true
 vim.g.tokyonight_lualine_bold = true
---vim.cmd([[colorscheme tokyonight]])
+-- vim.cmd([[colorscheme tokyonight]])
 
 vim.wo.cursorline = true
 vim.wo.cursorlineopt = "number"
 
 local default_colors = require("kanagawa.colors").setup()
 local dragon = require("kanagawa.themes").dragon(default_colors)
+
+dragon["bg"] = "#011627"
 
 require("kanagawa").setup({
 	globalStatus = true,

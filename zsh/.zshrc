@@ -91,6 +91,9 @@ alias vim="nvim"
 alias cat="bat"
 alias gcat="/usr/bin/cat"
 
+# Use .config/screenrc instead of $HOME/.screenrc
+alias screen="screen -c ${HOME}/.config/screenrc"
+
 # bin / obj cleanup shortcut
 alias rmbin="rm -rvf **/bin"
 alias rmobj="rm -rvf **/obj"
