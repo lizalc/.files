@@ -2,7 +2,7 @@
   "name": "Night Owl",
   "comment": "Night Owl by Sarah Drasner",
   "foreground-color": "#d6deeb",
-  "background-color": "#011627CC",
+  "background-color": "#011627",
   "use-theme-colors": true,
   "use-highlight-color": false,
   "use-cursor-color": false,
